@@ -769,7 +769,6 @@ img {
  margin-bottom:1.6rem;
  font-family:"futura_m";
  font-weight:normal;
- text-shadow:0 10px 30px rgba(2, 11, 22, 0.5)
 }
 @media screen and (max-width:800px) {
  .title__text {
@@ -791,8 +790,10 @@ img {
  }
 }
 .title .border {
- display:inline-block;
- margin-bottom:3.2rem
+ display:inline-flex;
+ margin-bottom:3.2rem;
+ flex-direction: column;
+ margin-left: 40px;
 }
 @media screen and (max-width:420px) {
  .title .border {
@@ -801,43 +802,49 @@ img {
 }
 .title .border span {
  display:block;
- width:88px;
+ width:160px;
  height:4px;
  border-radius:5px;
- background:#ff4d5a
+ background:#fd6051;
+ margin-bottom: 1.4rem;
+ margin-left: auto;
+ margin-right: auto;
 }
-.title .border span:first-child {
- margin-bottom:1.4rem
-}
-@media screen and (max-width:420px) {
- .title .border span:first-child {
-  margin-bottom:0.7rem
- }
-}
-@media screen and (max-width:800px) {
- .title .border span {
-  width:70px
- }
-}
-@media screen and (max-width:420px) {
- .title .border span {
-  width:44px;
-  height:2px
- }
+.title .border span:nth-child(2) {
+  width:120px;
 }
 .title .border span:last-child {
- margin-left:54px
+  width:80px;
 }
-@media screen and (max-width:800px) {
- .title .border span:last-child {
-  margin-left:43px
- }
-}
-@media screen and (max-width:420px) {
- .title .border span:last-child {
-  margin-left:27px
- }
-}
+// @media screen and (max-width:420px) {
+//  .title .border span:first-child {
+//   margin-bottom:0.7rem
+//  }
+// }
+// @media screen and (max-width:800px) {
+//  .title .border span {
+//   width:70px
+//  }
+// }
+// @media screen and (max-width:420px) {
+//  .title .border span {
+//   // width:44px;
+//   height:2px
+//  }
+// }
+// .title .border span:last-child {
+//  margin-left:54px
+// }
+// @media screen and (max-width:800px) {
+//  .title .border span:last-child {
+//   margin-left:43px
+//  }
+// }
+// @media screen and (max-width:420px) {
+//  .title .border span:last-child {
+//   margin-left:27px
+//  }
+// }
 .title__lead {
  color:#fff;
  font-size:2.8rem;
@@ -1549,10 +1556,10 @@ header .global-nav__sns a:last-child {
  height:100vh;
  top:0;
  left:0;
- background-image:-webkit-gradient(linear, left top, left bottom, from(#072142), color-stop(#061c37), color-stop(#07182b), color-stop(#061220), to(#020b16));
- background-image:-webkit-linear-gradient(top, #072142, #061c37, #07182b, #061220, #020b16);
- background-image:-o-linear-gradient(top, #072142, #061c37, #07182b, #061220, #020b16);
- background-image:linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);
+ background-image:-webkit-gradient(linear, right left, right left, from(#ffbd8b), color-stop(#ffbd8b), color-stop(#7da3be), color-stop(#7da3be), to(#7da3be));
+ background-image:-webkit-linear-gradient(top, #ffbd8b, #ffbd8b, #7da3be, #7da3be, #7da3be);
+ background-image:-o-linear-gradient(top, #ffbd8b, #ffbd8b, #7da3be, #7da3be, #7da3be);
+ background-image:linear-gradient(to left, #ffbd8b, #ffbd8b, #7da3be, #7da3be, #7da3be);
  z-index:-200
 }
 .fullpage__slide {
@@ -1720,11 +1727,12 @@ header .global-nav__sns a:last-child {
  z-index:200
 }
 .moon__text {
- font-size:6.4rem;
+ font-size:4.4rem;
  letter-spacing:0.1em;
  text-shadow:0 10px 15px rgba(2, 11, 22, 0.2);
  color:#ff4d5a;
- font-family:"futura_b"
+ font-weight: 800;
+ line-height: 1;
 }
 @media screen and (max-width:800px) {
  .moon__text {
@@ -1739,7 +1747,7 @@ header .global-nav__sns a:last-child {
 }
 .moon__text-wrap {
  position:absolute;
- left:-15.5963%;
+//  left:-15.5963%;
  top:50%;
  -webkit-transform:translate3d(0, -50%, 0);
  transform:translate3d(0, -50%, 0)
@@ -2599,6 +2607,18 @@ header .global-nav__sns a:last-child {
 
 .ml9 .letter {
   transform-origin: 50% 100%;
+  display: inline-block;
+  line-height: 1em;
+}
+
+.ml12 {
+  // font-weight: 200;
+  font-size: 1.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+}
+
+.ml12 .letter {
   display: inline-block;
   line-height: 1em;
 }

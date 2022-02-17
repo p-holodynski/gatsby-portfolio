@@ -10,10 +10,13 @@ class MoonBackground extends Component {
   }
   render() {
     return (
-      <div> 
+      <div>
         <div className="moon-background">
           <div className="moonlight">
-            <div className="moonlight__wrap js-parallax-moonlight" ref={el => (this.scene = el)}>
+            <div
+              className="moonlight__wrap js-parallax-moonlight"
+              ref={el => (this.scene = el)}
+            >
               <div className="layer moonlight__img" data-depth="0.2"></div>
             </div>
           </div>
