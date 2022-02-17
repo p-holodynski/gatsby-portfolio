@@ -144,7 +144,6 @@ const IndexPage = props => (
               return 500 + 50 * i
             },
           })
-
         }
         if (destination.index === 1) {
           anime
@@ -229,34 +228,15 @@ const IndexPage = props => (
                 </button> */}
               </div>
             </div>
-            <div className="section">
+            <div className="section skills">
               <div className="fullpage__slide">
-                <div className="title">
-                  <h2 className="title__text js-letter">
-                    Hair Space
-                    <br />
-                    REILE
-                  </h2>
-                  <div className="border js-letter">
-                    <span></span>
-                    <span className="js-letter"></span>
-                  </div>
-                  <p className="title__lead js-letter">website</p>
-                  <div className="btn-wrap js-letter">
-                    <a className="btn" href="./reile.html">
-                      Show me more
-                    </a>
-                  </div>
+                <h2 className="title__text js-letter">Hair Space</h2>
+                <div className="border js-letter-lines">
+                  <span></span>
+                  <span className="js-letter-lines"></span>
+                  <span className="js-letter-lines"></span>
                 </div>
-                <a className="image image--works" href="/reile.html">
-                  <div className="image__over">
-                    <div className="image__cover"></div>
-                    <div className="image__cover"></div>
-                  </div>
-                  <div className="page-num">
-                    <p>01</p>
-                  </div>
-                </a>
+                <div className="card"></div>
               </div>
             </div>
           </ReactFullpage.Wrapper>
