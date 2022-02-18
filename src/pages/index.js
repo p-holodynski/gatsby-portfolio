@@ -9,6 +9,9 @@ import Moon from "../components/moon"
 import MoonBackground from "../components/moonBackground"
 import StarBackground from "../components/starBackground"
 import Anime, { anime } from "react-anime"
+import phpLogo from "../static/php-file.svg"
+import laravelLogo from "../static/laravel-logo.svg"
+import wordpressLogo from "../static/wordpress-logo.svg"
 
 const IndexPage = props => (
   <div>
@@ -50,6 +53,15 @@ const IndexPage = props => (
             "<span class='letter'>$&</span>"
           )
 
+        var textWrapperHeaderSkills = document.querySelector(
+          ".header.skills.ml12 .text-wrapper"
+        )
+        textWrapperHeaderSkills.innerHTML =
+          textWrapperHeaderSkills.textContent.replace(
+            /\S/g,
+            "<span class='letter'>$&</span>"
+          )
+
         console.log("onLeave event", { origin, destination, direction })
         var background1 =
           "linear-gradient(to left, #ffbd8b, #ffbd8b, #7da3be, #7da3be, #7da3be)"
@@ -77,61 +89,79 @@ const IndexPage = props => (
               delay: (el, i) => 45 * (i + 1),
             })
 
-          anime({
-            targets: ".js-letter-lines",
-            translateX: ["100%", 0],
-            translateZ: 0,
-            opacity: [0, 1],
-            easing: "easeOutCubic",
-            duration: 800,
-            delay: function (el, i) {
-              return 500 + 50 * i
-            },
-          })
-
           anime
             .timeline({
               loop: false,
             })
             .add({
-              targets: ".ml9 .lettersFirstName .letter",
-              scale: [0, 1],
-              duration: 1500,
-              elasticity: 600,
-              delay: (el, i) => 90 * (i + 1),
+              targets: ".js-letter",
+              translateX: ["-100%", "0%"],
+              translateZ: 0,
+              opacity: [0, 1],
+              easing: "easeOutCubic",
+              duration: 800,
+              delay: function (el, i) {
+                return 50 * i
+              },
             })
-
-          anime
-            .timeline({
-              loop: false,
-            })
-            .add({
-              targets: ".ml9 .lettersLastName .letter",
-              scale: [0, 1],
-              duration: 1500,
-              elasticity: 600,
-              delay: (el, i) => 90 * (i + 1),
-            })
-
-          anime.timeline({ loop: false }).add({
-            targets: ".ml12 .lettersFirstRowPosition .letter",
-            translateX: [40, 0],
-            translateZ: 0,
-            opacity: [0, 1],
-            easing: "easeOutExpo",
-            duration: 1200,
-            delay: (el, i) => 500 + 30 * i,
-          })
-
-          anime.timeline({ loop: false }).add({
-            targets: ".ml12 .lettersLastRowPosition .letter",
-            translateX: [40, 0],
-            translateZ: 0,
-            opacity: [0, 1],
-            easing: "easeOutExpo",
-            duration: 1200,
-            delay: (el, i) => 500 + 30 * i,
-          })
+            .add(
+              {
+                targets: ".ml9 .lettersFirstName .letter",
+                scale: [0, 1],
+                duration: 1000,
+                elasticity: 600,
+                delay: (el, i) => 30 * (i + 1),
+              },
+              500
+            )
+            .add(
+              {
+                targets: ".ml9 .lettersLastName .letter",
+                scale: [0, 1],
+                duration: 1000,
+                elasticity: 600,
+                delay: (el, i) => 30 * (i + 1),
+              },
+              "-=200"
+            )
+            .add(
+              {
+                targets: ".js-letter-lines",
+                translateX: ["100%", 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                easing: "easeOutCubic",
+                duration: 800,
+                delay: function (el, i) {
+                  return 500 + 50 * i
+                },
+              },
+              "-=1000"
+            )
+            .add(
+              {
+                targets: ".ml12 .lettersFirstRowPosition .letter",
+                translateX: [40, 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                easing: "easeOutExpo",
+                duration: 800,
+                delay: (el, i) => 100 + 30 * i,
+              },
+              "-=200"
+            )
+            .add(
+              {
+                targets: ".ml12 .lettersLastRowPosition .letter",
+                translateX: [40, 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                easing: "easeOutExpo",
+                duration: 800,
+                delay: (el, i) => 100 + 30 * i,
+              },
+              "-=400"
+            )
 
           anime({
             targets: ".js-moon",
@@ -142,6 +172,18 @@ const IndexPage = props => (
             duration: 800,
             delay: function (el, i) {
               return 500 + 50 * i
+            },
+          })
+
+          anime({
+            targets: ".card",
+            translateX: [0, "100%"],
+            translateZ: 0,
+            opacity: [1, 0],
+            easing: "easeOutCubic",
+            duration: 800,
+            delay: function (el, i) {
+              return 50 * i
             },
           })
         }
@@ -167,8 +209,8 @@ const IndexPage = props => (
             })
 
           anime({
-            targets: ".js-moon",
-            translateX: [0, "100%"],
+            targets: ".js-letter",
+            translateX: ["0%", "-100%"],
             translateZ: 0,
             opacity: [1, 0],
             easing: "easeOutCubic",
@@ -189,6 +231,60 @@ const IndexPage = props => (
               return 50 * i
             },
           })
+
+          anime({
+            targets: ".js-moon",
+            translateX: [0, "100%"],
+            translateZ: 0,
+            opacity: [1, 0],
+            easing: "easeOutCubic",
+            duration: 800,
+            delay: function (el, i) {
+              return 50 * i
+            },
+          })
+
+          anime
+            .timeline({
+              loop: false,
+            })
+            .add({
+              targets: ".card",
+              translateX: ["100%", 0],
+              translateZ: 0,
+              opacity: [0, 1],
+              easing: "easeOutCubic",
+              duration: 800,
+              delay: function (el, i) {
+                return 500 + 50 * i
+              },
+            })
+            .add({
+              targets: ".header.skills.ml12 .letter",
+              translateX: [40, 0],
+              translateZ: 0,
+              opacity: [0, 1],
+              easing: "easeOutExpo",
+              duration: 800,
+              delay: (el, i) => 100 + 30 * i,
+            }, "-=400")
+            .add({
+              targets: ".cover",
+              left: ["-100%", "100%"],
+              easing: "easeOutCubic",
+              duration: 2000,
+              delay: (el, i) => i * 200,
+            }, "-=400")
+            .add(
+              {
+                targets: ".announcement .row .col div",
+                opacity: [0, 1],
+                easing: "easeOutCubic",
+                duration: 2000,
+                delay: (el, i) => i * 200,
+              },
+              "-=2000"
+            )
         }
       }}
       render={({ state, fullpageApi }) => {
@@ -213,11 +309,11 @@ const IndexPage = props => (
                   <p className="title__lead js-letter ml12">
                     <span className="text-wrapper">
                       <span className="lettersFirstRowPosition">
-                        Full Stack
+                        Freelancer \
                       </span>
                       <br />
                       <span className="lettersLastRowPosition">
-                        Web Developer
+                        Web Designer
                       </span>
                     </span>
                   </p>
@@ -230,13 +326,81 @@ const IndexPage = props => (
             </div>
             <div className="section skills">
               <div className="fullpage__slide">
-                <h2 className="title__text js-letter">Hair Space</h2>
-                <div className="border js-letter-lines">
-                  <span></span>
-                  <span className="js-letter-lines"></span>
-                  <span className="js-letter-lines"></span>
+                <div className="card js-moon">
+                  <div className="header skills ml12">
+                    <span className="text-wrapper">Skills</span>
+                  </div>
+                  <div className="announcement">
+                    <div className="corner"></div>
+                    <div className="corner"></div>
+                    <div className="corner"></div>
+                    <div className="corner"></div>
+                    <div className="cover first"></div>
+                    <div className="cover second"></div>
+                    <div className="cover third"></div>
+                    <div className="row">
+                      <div className="col">
+                        <div className="skill-icon">
+                          <img src={phpLogo} />
+                        </div>
+                        <div className="skill-icon-wrapper">
+                          <img src={laravelLogo} />
+                          <span>Laravel</span>
+                        </div>
+                        <div className="skill-icon-wrapper">
+                          <img src={wordpressLogo} />
+                          <span>Wordpress</span>
+                        </div>
+                      </div>
+                      <div className="col">
+                        <div className="skill-icon">
+                          <i className="fab fa-docker"></i>
+                        </div>
+                        <h3>DevOps</h3>
+                        <p>Docker, Ansible, Kubernetes</p>
+                      </div>
+                      <div className="col">
+                        <div className="skill-icon">
+                          <i className="fab fa-aws"></i>
+                        </div>
+                        <h3>Cloud Engineering</h3>
+                        <p>
+                          AWS EC2, EKS, CloudFormation, CloudWatch, networking
+                          etc.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col">
+                        <div className="skill-icon">
+                          <i className="fab fa-python"></i>
+                        </div>
+                        <h3>Python</h3>
+                        <p>Flask, Django, Click</p>
+                      </div>
+                      <div className="col">
+                        <div className="skill-icon">
+                          <i className="fas fa-database"></i>
+                        </div>
+                        <h3>Databases</h3>
+                        <p>Cassandra, Redis, MySQL</p>
+                      </div>
+                      <div className="col">
+                        <div className="skill-icon">
+                          <i className="fab fa-jenkins"></i>
+                        </div>
+                        <h3>Continuous Integration</h3>
+                        <p>Jenkins CI, Travis CI</p>
+                      </div>
+                    </div>
+                    <a
+                      className="inspiration"
+                      href="https://icons8.com/icon/pKaVdzbCJGgA/php"
+                    >
+                      PHP icon by Icons8
+                    </a>
+                  </div>
                 </div>
-                <div className="card"></div>
               </div>
             </div>
           </ReactFullpage.Wrapper>
