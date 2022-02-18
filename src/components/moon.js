@@ -1,15 +1,11 @@
 import React, { Component } from "react"
 import Parallax from "parallax-js" // Now published on NPM
-import Anime, { anime } from "react-anime"
-import { StaticImage } from "gatsby-plugin-image"
+import { anime } from "react-anime"
 import sun from "../static/sun-svg-animated.svg"
-import cloud1 from "../static/cloud1.svg"
-import cloud2 from "../static/cloud3.svg"
-import cloud3 from "../static/cloud2.svg"
 import bCloud1 from "../static/b_cloud01.svg"
 import bCloud2 from "../static/b_cloud02.svg"
 import palm from "../static/palm1.svg"
-import palmFlip from "../static/palm-flip.svg"
+import beach from "../static/beach.svg"
 
 class Moon extends Component {
   componentDidMount() {
@@ -82,7 +78,7 @@ class Moon extends Component {
           </div>
           <div className="moon__front layer" data-depth="0.6">
             <div className="cloud cloud--front2 js-moon">
-              <img src={palm} />
+              <img src={beach} />
             </div>
           </div>
           <div className="moon__back layer sun"data-depth="0.5">

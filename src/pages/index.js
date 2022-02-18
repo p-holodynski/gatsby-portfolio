@@ -1,17 +1,26 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-import { Helmet } from "react-helmet"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
 import ReactFullpage from "@fullpage/react-fullpage"
 import Moon from "../components/moon"
 import MoonBackground from "../components/moonBackground"
 import StarBackground from "../components/starBackground"
-import Anime, { anime } from "react-anime"
+import { anime } from "react-anime"
 import phpLogo from "../static/php-file.svg"
 import laravelLogo from "../static/laravel-logo.svg"
 import wordpressLogo from "../static/wordpress-logo.svg"
+import javascriptLogo from "../static/javascript.svg"
+import reactLogo from "../static/react.svg"
+import vueLogo from "../static/vue.svg"
+import serverlessLogo from "../static/serverless.svg"
+import gatsbyLogo from "../static/gatsby.svg"
+import gridsomeLogo from "../static/gridsome.svg"
+import databaseLogo from "../static/database.svg"
+import redisLogo from "../static/redis.svg"
+import mysqlLogo from "../static/mysql.svg"
+import uxDesignLogo from "../static/user-experience-design.svg"
+import webDesignLogo from "../static/design-skills.svg"
+import responsiveLogo from "../static/responsive.svg"
+import seoLogo from "../static/seo.svg"
+import pageSpeedLogo from "../static/rocket-ship.svg"
 
 const IndexPage = props => (
   <div>
@@ -259,29 +268,35 @@ const IndexPage = props => (
                 return 500 + 50 * i
               },
             })
-            .add({
-              targets: ".header.skills.ml12 .letter",
-              translateX: [40, 0],
-              translateZ: 0,
-              opacity: [0, 1],
-              easing: "easeOutExpo",
-              duration: 800,
-              delay: (el, i) => 100 + 30 * i,
-            }, "-=400")
-            .add({
-              targets: ".cover",
-              left: ["-100%", "100%"],
-              easing: "easeOutCubic",
-              duration: 2000,
-              delay: (el, i) => i * 200,
-            }, "-=400")
+            .add(
+              {
+                targets: ".header.skills.ml12 .letter",
+                translateX: [40, 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                easing: "easeOutExpo",
+                duration: 800,
+                delay: (el, i) => 100 + 30 * i,
+              },
+              "-=400"
+            )
+            .add(
+              {
+                targets: ".cover",
+                left: ["-100%", "100%"],
+                easing: "easeOutCubic",
+                duration: 2000,
+                delay: (el, i) => i * 200,
+              },
+              "-=400"
+            )
             .add(
               {
                 targets: ".announcement .row .col div",
                 opacity: [0, 1],
                 easing: "easeOutCubic",
                 duration: 2000,
-                delay: (el, i) => i * 200,
+                delay: (el, i) => i * 100,
               },
               "-=2000"
             )
@@ -338,59 +353,88 @@ const IndexPage = props => (
                     <div className="cover first"></div>
                     <div className="cover second"></div>
                     <div className="cover third"></div>
-                    <div className="row">
-                      <div className="col">
-                        <div className="skill-icon">
-                          <img src={phpLogo} />
+                    <div className="wrapper">
+                      <div className="row">
+                        <div className="col">
+                          <div className="skill-icon">
+                            <img src={phpLogo} />
+                          </div>
+                          <div className="skill-icon-wrapper">
+                            <img src={laravelLogo} />
+                            <span>Laravel</span>
+                          </div>
+                          <div className="skill-icon-wrapper">
+                            <img src={wordpressLogo} />
+                            <span>Wordpress</span>
+                          </div>
                         </div>
-                        <div className="skill-icon-wrapper">
-                          <img src={laravelLogo} />
-                          <span>Laravel</span>
+                        <div className="col">
+                          <div className="skill-icon">
+                            <img src={javascriptLogo} />
+                          </div>
+                          <div className="skill-icon-wrapper">
+                            <img src={reactLogo} />
+                            <span>React</span>
+                          </div>
+                          <div className="skill-icon-wrapper">
+                            <img src={vueLogo} />
+                            <span>Vue</span>
+                          </div>
                         </div>
-                        <div className="skill-icon-wrapper">
-                          <img src={wordpressLogo} />
-                          <span>Wordpress</span>
+                        <div className="col">
+                          <div className="skill-icon">
+                            <img src={serverlessLogo} />
+                          </div>
+                          <div className="skill-icon-wrapper">
+                            <img src={gatsbyLogo} />
+                            <span>Gatsby</span>
+                          </div>
+                          <div className="skill-icon-wrapper">
+                            <img src={gridsomeLogo} />
+                            <span>Gridsome</span>
+                          </div>
                         </div>
                       </div>
-                      <div className="col">
-                        <div className="skill-icon">
-                          <i className="fab fa-docker"></i>
+                      <div className="row">
+                        <div className="col">
+                          <div className="skill-icon">
+                            <img src={databaseLogo} />
+                          </div>
+                          <div className="skill-icon-wrapper">
+                            <img src={mysqlLogo} />
+                            <span>MySQL</span>
+                          </div>
+                          <div className="skill-icon-wrapper">
+                            <img src={redisLogo} />
+                            <span>Redis</span>
+                          </div>
                         </div>
-                        <h3>DevOps</h3>
-                        <p>Docker, Ansible, Kubernetes</p>
-                      </div>
-                      <div className="col">
-                        <div className="skill-icon">
-                          <i className="fab fa-aws"></i>
+                        <div className="col">
+                          <div className="skill-icon">
+                            <img src={webDesignLogo} />
+                          </div>
+                          <div className="skill-icon-wrapper">
+                            <img src={uxDesignLogo} />
+                            <span>UX/UI Design</span>
+                          </div>
+                          <div className="skill-icon-wrapper">
+                            <img src={responsiveLogo} />
+                            <span>Responsive</span>
+                          </div>
                         </div>
-                        <h3>Cloud Engineering</h3>
-                        <p>
-                          AWS EC2, EKS, CloudFormation, CloudWatch, networking
-                          etc.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col">
-                        <div className="skill-icon">
-                          <i className="fab fa-python"></i>
+                        <div className="col">
+                          <div className="skill-icon">
+                            <img src={seoLogo} />
+                          </div>
+                          <div className="skill-icon-wrapper">
+                            <img src={pageSpeedLogo} />
+                            <span>Fast Pages</span>
+                          </div>
+                          <div className="skill-icon-wrapper">
+                            <img src="" />
+                            <span></span>
+                          </div>
                         </div>
-                        <h3>Python</h3>
-                        <p>Flask, Django, Click</p>
-                      </div>
-                      <div className="col">
-                        <div className="skill-icon">
-                          <i className="fas fa-database"></i>
-                        </div>
-                        <h3>Databases</h3>
-                        <p>Cassandra, Redis, MySQL</p>
-                      </div>
-                      <div className="col">
-                        <div className="skill-icon">
-                          <i className="fab fa-jenkins"></i>
-                        </div>
-                        <h3>Continuous Integration</h3>
-                        <p>Jenkins CI, Travis CI</p>
                       </div>
                     </div>
                     <a
@@ -399,6 +443,54 @@ const IndexPage = props => (
                     >
                       PHP icon by Icons8
                     </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="section work">
+              <div className="fullpage__slide">
+                <div className="card js-moon">
+                  <div className="header skills ml12">
+                    <span className="text-wrapper">Work</span>
+                  </div>
+                  <div className="announcement">
+                    <div className="corner"></div>
+                    <div className="corner"></div>
+                    <div className="corner"></div>
+                    <div className="corner"></div>
+                    <div className="cover first"></div>
+                    <div className="cover second"></div>
+                    <div className="cover third"></div>
+                    <div className="wrapper">
+                      <div className="row">
+                        <div className="col"></div>
+                        <div className="col"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="section contact">
+              <div className="fullpage__slide">
+                <div className="card js-moon">
+                  <div className="header skills ml12">
+                    <span className="text-wrapper">Contact</span>
+                  </div>
+                  <div className="announcement">
+                    <div className="corner"></div>
+                    <div className="corner"></div>
+                    <div className="corner"></div>
+                    <div className="corner"></div>
+                    <div className="cover first"></div>
+                    <div className="cover second"></div>
+                    <div className="cover third"></div>
+                    <div className="wrapper">
+                      <div className="row">
+                        <div className="col"></div>
+                        <div className="col"></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
