@@ -2850,7 +2850,8 @@ header .global-nav__sns a:last-child {
   color: #fff;
   border-radius: 20px;
   display: flex;
-justify-content: center;
+  justify-content: center;
+  max-width: 980px;
 }
 
 .card .corner {
@@ -2965,7 +2966,6 @@ justify-content: center;
 .wrapper {
   margin: 0 auto;
   max-width: 980px;
-  min-width: 320px;
   width: 100%;
 }
 
@@ -3059,3 +3059,206 @@ justify-content: center;
     display: none;
   }
 }
+
+.project-container {
+  position: relative;
+  z-index: -1;
+  display: flex;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  // margin-bottom: 80px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  align-self: center;
+  border-radius: 16px;
+  transition: height 200ms ease, width 200ms ease;
+}
+
+.project-container.con-cubo {
+  // margin-top: 48px;
+  background-color: #0393ff;
+  background-image: none;
+}
+
+.project-text {
+  display: flex;
+  width: 30%;
+  margin-bottom: 68px;
+  margin-left: 6.5%;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 0 1 auto;
+}
+
+.project-description {
+  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: left;
+}
+
+.button {
+  display: inline-block;
+  padding: 16px 32px;
+    padding-right: 32px;
+    padding-left: 32px;
+  border-radius: 12px;
+  background-color: #75fac8;
+  background-image: linear-gradient(135deg, #c2fbe6, #4eedb1);
+  opacity: 1;
+  transition: opacity 150ms ease;
+    transition-property: opacity;
+  color: #002f70;
+}
+
+.button.project {
+  background-color: rgba(255, 255, 255, 0.3);
+  background-image: none;
+  color: #fff;
+}
+
+.project-image-container {
+  max-height: 510px;
+  flex: 0 1 auto;
+}
+
+.project-image-desktop {
+  border-radius: 16px;
+}
+
+.project-image-tablet {
+  display: none;
+}
+
+.project-image-mobile-landscape {
+  display: none;
+}
+
+.project-image-mobile-portrait {
+  display: none;
+}
+
+@media only screen and (max-width: 991px) {
+  .project-container {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    flex-direction: column-reverse;
+    align-items: stretch;
+    background-color: #64adff;
+  }
+
+  .project-container.con-cubo {
+    // margin-top: 40px;
+  }
+
+  .project-text {
+    width: 50%;
+    margin: 40px 8% 9%;
+      margin-top: 40px;
+      margin-bottom: 9%;
+  }
+
+  .project-image-container {
+    height: auto;
+    max-height: none;
+    max-width: 100%;
+    min-height: auto;
+    margin-right: 0%;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+
+  .project-image-desktop {
+    display: none;
+    height: auto;
+    max-height: none;
+    min-height: auto;
+  }
+
+  .project-image-tablet {
+    display: inline-block;
+    height: auto;
+    max-height: none;
+    min-height: auto;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+
+  .project-image-mobile-landscape {
+    height: auto;
+    max-height: none;
+    min-height: auto;
+  }
+
+  .project-image-mobile-portrait {
+    height: auto;
+    max-height: none;
+    min-height: auto;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .project-container {
+    margin-bottom: 0px;
+    border-radius: 12px;
+  }
+
+  .project-container.con-cubo {
+    // margin-top: 36px;
+  }
+
+  .project-text {
+    width: 66%;
+    margin-top: 6%;
+    margin-bottom: 10%;
+  }
+
+  .button {
+    padding-right: 28px;
+    padding-left: 28px;
+    transition-property: none;
+  }
+
+  .project-image-tablet {
+    display: none;
+  }
+
+  .project-image-mobile-landscape {
+    display: inline-block;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .project-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 0px;
+  }
+
+  .project-container.con-cubo {
+    // margin-top: 24px;
+  }
+
+  .project-text {
+    width: auto;
+    margin-top: 32px;
+    margin-bottom: 36px;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .project-image-mobile-landscape {
+    display: none;
+  }
+
+  .project-image-mobile-portrait {
+    display: inline-block;
+    border-radius: 0px;
+  }
+}
+

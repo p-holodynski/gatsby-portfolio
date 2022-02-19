@@ -448,6 +448,7 @@ const IndexPage = props => (
               </div>
             </div>
             <div className="section work">
+              <div className="slide">
               <div className="fullpage__slide">
                 <div className="card js-moon">
                   <div className="header skills ml12">
@@ -461,14 +462,62 @@ const IndexPage = props => (
                     <div className="cover first"></div>
                     <div className="cover second"></div>
                     <div className="cover third"></div>
-                    <div className="wrapper">
-                      <div className="row">
-                        <div className="col"></div>
-                        <div className="col"></div>
+                    <a
+                      href="/con-cubo"
+                      className="project-container con-cubo w-inline-block"
+                    >
+                      <div className="project-text">
+                        <h3>Con Cubo</h3>
+                        <p className="project-description">
+                          Designing an SaaS tool to visualize and manage complex
+                          organizations.
+                        </p>
+                        <div className="button project">
+                          <div>View Case Study</div>
+                        </div>
                       </div>
-                    </div>
+                      <div className="project-image-container">
+                        <img
+                          src="https://uploads-ssl.webflow.com/5d362331b9f50fdd0566cb47/613231511ce69bc95f2ee5a2_hp-teaser-concubo-desktop.jpg"
+                          loading="lazy"
+                          alt=""
+                          sizes="(max-width: 991px) 100vw, 59vw"
+                          srcSet="https://uploads-ssl.webflow.com/5d362331b9f50fdd0566cb47/613231511ce69bc95f2ee5a2_hp-teaser-concubo-desktop-p-800.jpeg 800w, https://uploads-ssl.webflow.com/5d362331b9f50fdd0566cb47/613231511ce69bc95f2ee5a2_hp-teaser-concubo-desktop-p-1080.jpeg 1080w, https://uploads-ssl.webflow.com/5d362331b9f50fdd0566cb47/613231511ce69bc95f2ee5a2_hp-teaser-concubo-desktop.jpg 1587w"
+                          className="project-image-desktop"
+                          width="680"
+                        />
+                        <img
+                          src="https://uploads-ssl.webflow.com/5d362331b9f50fdd0566cb47/613211cc1ad2f06d346cd86d_hp-teaser-concubo-tablet.jpg"
+                          loading="lazy"
+                          srcSet="https://uploads-ssl.webflow.com/5d362331b9f50fdd0566cb47/613211cc1ad2f06d346cd86d_hp-teaser-concubo-tablet-p-500.jpeg 500w, https://uploads-ssl.webflow.com/5d362331b9f50fdd0566cb47/613211cc1ad2f06d346cd86d_hp-teaser-concubo-tablet-p-800.jpeg 800w, https://uploads-ssl.webflow.com/5d362331b9f50fdd0566cb47/613211cc1ad2f06d346cd86d_hp-teaser-concubo-tablet-p-1080.jpeg 1080w, https://uploads-ssl.webflow.com/5d362331b9f50fdd0566cb47/613211cc1ad2f06d346cd86d_hp-teaser-concubo-tablet-p-1600.jpeg 1600w, https://uploads-ssl.webflow.com/5d362331b9f50fdd0566cb47/613211cc1ad2f06d346cd86d_hp-teaser-concubo-tablet.jpg 1760w"
+                          sizes="(max-width: 767px) 100vw, (max-width: 991px) 84vw, 100vw"
+                          alt=""
+                          className="project-image-tablet"
+                        />
+                        <img
+                          src="https://uploads-ssl.webflow.com/5d362331b9f50fdd0566cb47/613211cc46b8a011a834efeb_hp-teaser-concubo-mobile-landscape.jpg"
+                          loading="lazy"
+                          srcSet="https://uploads-ssl.webflow.com/5d362331b9f50fdd0566cb47/613211cc46b8a011a834efeb_hp-teaser-concubo-mobile-landscape-p-500.jpeg 500w, https://uploads-ssl.webflow.com/5d362331b9f50fdd0566cb47/613211cc46b8a011a834efeb_hp-teaser-concubo-mobile-landscape-p-800.jpeg 800w, https://uploads-ssl.webflow.com/5d362331b9f50fdd0566cb47/613211cc46b8a011a834efeb_hp-teaser-concubo-mobile-landscape-p-1080.jpeg 1080w, https://uploads-ssl.webflow.com/5d362331b9f50fdd0566cb47/613211cc46b8a011a834efeb_hp-teaser-concubo-mobile-landscape.jpg 1280w"
+                          sizes="(max-width: 479px) 100vw, (max-width: 767px) 84vw, 100vw"
+                          alt=""
+                          className="project-image-mobile-landscape"
+                        />
+                        <img
+                          src="https://uploads-ssl.webflow.com/5d362331b9f50fdd0566cb47/613211cb2b1a16bf55a83f1e_hp-teaser-concubo-mobile-portrait.jpg"
+                          loading="lazy"
+                          srcSet="https://uploads-ssl.webflow.com/5d362331b9f50fdd0566cb47/613211cb2b1a16bf55a83f1e_hp-teaser-concubo-mobile-portrait-p-500.jpeg 500w, https://uploads-ssl.webflow.com/5d362331b9f50fdd0566cb47/613211cb2b1a16bf55a83f1e_hp-teaser-concubo-mobile-portrait.jpg 750w"
+                          sizes="100vw"
+                          alt=""
+                          className="project-image-mobile-portrait"
+                        />
+                      </div>
+                    </a>
                   </div>
                 </div>
+              </div>
+              </div>
+              <div className="slide">
+                test
               </div>
             </div>
             <div className="section contact">
