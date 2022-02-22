@@ -4,7 +4,6 @@ import { anime } from "react-anime"
 import sun from "../static/sun-svg-animated.svg"
 import bCloud1 from "../static/b_cloud01.svg"
 import bCloud2 from "../static/b_cloud02.svg"
-import palm from "../static/palm1.svg"
 import beach from "../static/beach.svg"
 
 class Moon extends Component {

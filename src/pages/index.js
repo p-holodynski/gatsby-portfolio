@@ -71,6 +71,13 @@ const IndexPage = props => (
             "<span class='letter'>$&</span>"
           )
 
+        var textWrapperHeaderWork = document.querySelector(".header.work.ml14 .letters")
+        textWrapperHeaderWork.innerHTML =
+          textWrapperHeaderWork.textContent.replace(
+            /\S/g,
+            "<span class='letter'>$&</span>"
+          )
+
         console.log("onLeave event", { origin, destination, direction })
         var background1 =
           "linear-gradient(to left, #ffbd8b, #ffbd8b, #7da3be, #7da3be, #7da3be)"
@@ -300,38 +307,74 @@ const IndexPage = props => (
               },
               "-=2000"
             )
+
+            anime({
+              targets: ".blog-card.js-moon, .header.work.ml14",
+              translateX: [0, "100%"],
+              translateZ: 0,
+              opacity: [1, 0],
+              easing: "easeOutCubic",
+              duration: 800,
+              delay: function (el, i) {
+                return 50 * i
+              },
+            })
         }
         if (destination.index === 2) {
-          let card = document.querySelector(".card-flippable")
-          console.log(card)
-          let moved = 0
-          let interval
 
-          if (!card) return
-
-          card.addEventListener("click", function (event) {
-            clearInterval(interval)
-            card.style.transform = ""
-
-            // Do not flip the card if the user is trying to
-            // tap a link.
-            if (event.target.nodeName === "A") {
-              return
-            }
-
-            let cName = card.getAttribute("data-toggle-class")
-            let toggled = card.classList.contains(cName)
-            if (toggled) {
-              card.classList.remove(cName)
-            } else {
-              card.classList.add(cName)
-            }
+          anime({
+            targets: ".card.js-moon",
+            translateX: [0, "100%"],
+            translateZ: 0,
+            opacity: [1, 0],
+            easing: "easeOutCubic",
+            duration: 800,
+            delay: function (el, i) {
+              return 50 * i
+            },
           })
 
-          interval = setInterval(function () {
-            moved = moved ? 0 : 10
-            card.style.transform = "translateY(" + moved + "px)"
-          }, 1500)
+          anime
+            .timeline({
+              loop: false,
+            })
+            .add({
+              targets: ".header.work.ml14",
+              translateX: ["100%", 0],
+              translateZ: 0,
+              opacity: [0, 1],
+              easing: "easeOutCubic",
+              duration: 800,
+            }, "-=400")
+            .add({
+              targets: ".header.work.ml14 .line",
+              scaleX: [0, 1],
+              opacity: [0.5, 1],
+              easing: "easeInOutExpo",
+              duration: 900,
+            })
+            .add({
+              targets: ".header.work.ml14 .letter",
+              opacity: [0, 1],
+              translateX: [40, 0],
+              translateZ: 0,
+              scaleX: [0.3, 1],
+              easing: "easeOutExpo",
+              duration: 800,
+              offset: "-=600",
+              delay: (el, i) => 150 + 25 * i,
+            })
+            .add({
+              targets: ".blog-card",
+              translateX: ["100%", 0],
+              translateZ: 0,
+              opacity: [0, 1],
+              easing: "easeOutCubic",
+              duration: 800,
+              delay: function (el, i) {
+                return 500 + 50 * i
+              },
+            }, "-=1500")
         }
       }}
       render={({ state, fullpageApi }) => {
@@ -482,48 +525,52 @@ const IndexPage = props => (
             <div className="section work">
               <div className="slide">
                 <div className="fullpage__slide">
-                  <div className="js-moon">
-                    <div className="blog-card spring-fever">
-                      <div className="title-content">
-                        <h3>
-                          <a href="#">Tahiti Badminton Federation</a>
-                        </h3>
-                        <div className="intro">
-                          {" "}
-                          <a href="#">Website</a>{" "}
-                        </div>
+                  <div className="header work ml14">
+                    <span className="text-wrapper">
+                      <span class="letters">Work</span>
+                      <span class="line"></span>
+                    </span>
+                  </div>
+                  <div className="js-moon blog-card spring-fever">
+                    <div className="title-content">
+                      <h3>
+                        <a href="#">Tahiti Badminton Federation</a>
+                      </h3>
+                      <div className="intro">
+                        {" "}
+                        <a href="#">Website</a>{" "}
                       </div>
-                      <div className="card-info">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim...
-                        <a href="#">
-                          Read Article
-                          <span className="licon icon-arr icon-black"></span>
-                        </a>
-                      </div>
-                      <div className="utility-info">
-                        <ul className="utility-list">
-                          <li>
-                            <span className="licon icon-like"></span>
-                            <a href="#">2</a>
-                          </li>
-                          <li>
-                            <span className="licon icon-com"></span>
-                            <a href="#">12</a>
-                          </li>
-                          <li>
-                            <span className="licon icon-dat"></span>03 jun 2017
-                          </li>
-                          <li>
-                            <span className="licon icon-tag"></span>
-                            <a href="#">Photos</a>, <a href="#">Nice</a>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="gradient-overlay"></div>
-                      <div className="color-overlay"></div>
                     </div>
+                    <div className="card-info">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim...
+                      <a href="#">
+                        Read Article
+                        <span className="licon icon-arr icon-black"></span>
+                      </a>
+                    </div>
+                    <div className="utility-info">
+                      <ul className="utility-list">
+                        <li>
+                          <span className="licon icon-like"></span>
+                          <a href="#">2</a>
+                        </li>
+                        <li>
+                          <span className="licon icon-com"></span>
+                          <a href="#">12</a>
+                        </li>
+                        <li>
+                          <span className="licon icon-dat"></span>03 jun 2017
+                        </li>
+                        <li>
+                          <span className="licon icon-tag"></span>
+                          <a href="#">Photos</a>, <a href="#">Nice</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="gradient-overlay"></div>
+                    <div className="color-overlay"></div>
                   </div>
                 </div>
               </div>

@@ -2837,7 +2837,6 @@ header .global-nav__sns a:last-child {
   background: #24344b;
   background: linear-gradient(to top left, #e96874, #6e3663, #2b0830);
   background: linear-gradient(to top left, #f3b88d, #8f3d4b, #4a2f48);
-  border-radius: 8px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   height: 80%;
   margin: auto;
@@ -3346,6 +3345,44 @@ figcaption svg {
   }
 }
 
+.header.work {
+  width: 100%;
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 30px;
+  font-family: "futura_r", "Helvetica Neue";
+}
+
+.ml14 {
+  font-weight: 200;
+  font-size: 3.2em;
+}
+
+.ml14 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.15em;
+}
+
+.ml14 .line {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #fff;
+  transform-origin: 100% 100%;
+  bottom: 0;
+}
+
+.ml14 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
 .blog-card {
   max-width: 550px;
   width:100%;
@@ -3358,10 +3395,11 @@ figcaption svg {
   left: 0;
   margin: 0 auto;
   overflow: hidden;
-  border-radius: 0px;
+  border-radius: 20px;
   box-shadow: 0px 10px 20px -9px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   text-align: center;
-  transition:all 0.4s;
+  //transition:all 0.4s;
   background: url("../static/tahiti-badminton-federation-website.png") center no-repeat;
   background-size: 100%;
 }
