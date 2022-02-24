@@ -71,7 +71,9 @@ const IndexPage = props => (
             "<span class='letter'>$&</span>"
           )
 
-        var textWrapperHeaderWork = document.querySelector(".header.work.ml14 .letters")
+        var textWrapperHeaderWork = document.querySelector(
+          ".header.work.ml14 .letters"
+        )
         textWrapperHeaderWork.innerHTML =
           textWrapperHeaderWork.textContent.replace(
             /\S/g,
@@ -308,20 +310,19 @@ const IndexPage = props => (
               "-=2000"
             )
 
-            anime({
-              targets: ".blog-card.js-moon, .header.work.ml14",
-              translateX: [0, "100%"],
-              translateZ: 0,
-              opacity: [1, 0],
-              easing: "easeOutCubic",
-              duration: 800,
-              delay: function (el, i) {
-                return 50 * i
-              },
-            })
+          anime({
+            targets: ".blog-card.js-moon, .header.work.ml14",
+            translateX: [0, "100%"],
+            translateZ: 0,
+            opacity: [1, 0],
+            easing: "easeOutCubic",
+            duration: 800,
+            delay: function (el, i) {
+              return 50 * i
+            },
+          })
         }
         if (destination.index === 2) {
-
           anime({
             targets: ".card.js-moon",
             translateX: [0, "100%"],
@@ -338,14 +339,17 @@ const IndexPage = props => (
             .timeline({
               loop: false,
             })
-            .add({
-              targets: ".header.work.ml14",
-              translateX: ["100%", 0],
-              translateZ: 0,
-              opacity: [0, 1],
-              easing: "easeOutCubic",
-              duration: 800,
-            }, "-=400")
+            .add(
+              {
+                targets: ".header.work.ml14",
+                translateX: ["100%", 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                easing: "easeOutCubic",
+                duration: 800,
+              },
+              "-=400"
+            )
             .add({
               targets: ".header.work.ml14 .line",
               scaleX: [0, 1],
@@ -364,17 +368,20 @@ const IndexPage = props => (
               offset: "-=600",
               delay: (el, i) => 150 + 25 * i,
             })
-            .add({
-              targets: ".blog-card",
-              translateX: ["100%", 0],
-              translateZ: 0,
-              opacity: [0, 1],
-              easing: "easeOutCubic",
-              duration: 800,
-              delay: function (el, i) {
-                return 500 + 50 * i
+            .add(
+              {
+                targets: ".blog-card",
+                translateX: ["100%", 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                easing: "easeOutCubic",
+                duration: 800,
+                delay: function (el, i) {
+                  return 500 + 50 * i
+                },
               },
-            }, "-=1500")
+              "-=1500"
+            )
         }
       }}
       render={({ state, fullpageApi }) => {
@@ -531,41 +538,44 @@ const IndexPage = props => (
                       <span class="line"></span>
                     </span>
                   </div>
-                  <div className="js-moon blog-card spring-fever">
+                  <div className="js-moon blog-card spring-fever tahiti-badminton-federation">
                     <div className="title-content">
                       <h3>
-                        <a href="#">Tahiti Badminton Federation</a>
+                        <a href="https://ftbadminton.pf/">
+                          Tahiti Badminton Federation
+                        </a>
                       </h3>
                       <div className="intro">
                         {" "}
-                        <a href="#">Website</a>{" "}
+                        <a href="https://ftbadminton.pf/">Website</a>{" "}
                       </div>
                     </div>
                     <div className="card-info">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim...
-                      <a href="#">
-                        Read Article
+                      Static Generated Website built for the Tahitian Badminton
+                      Federation. Project involved using Jamstack framework
+                      Gridsome for serverless hosting and fast content delivery
+                      and Headless CMS - Netflify for a convenient way to update
+                      content of the website.
+                      <a href="https://ftbadminton.pf/">
+                        Visit Website
                         <span className="licon icon-arr icon-black"></span>
                       </a>
                     </div>
                     <div className="utility-info">
                       <ul className="utility-list">
                         <li>
-                          <span className="licon icon-like"></span>
-                          <a href="#">2</a>
+                          <span className="licon"></span>
+                          <a href="https://vuejs.org/">Vue</a>
                         </li>
                         <li>
-                          <span className="licon icon-com"></span>
-                          <a href="#">12</a>
+                          <span className="licon"></span>
+                          <a href="https://gridsome.org/">Gridsome</a>
                         </li>
                         <li>
-                          <span className="licon icon-dat"></span>03 jun 2017
+                          <span className="licon"></span>Serverless
                         </li>
                         <li>
-                          <span className="licon icon-tag"></span>
-                          <a href="#">Photos</a>, <a href="#">Nice</a>
+                          <span className="licon"></span>Headless CMS
                         </li>
                       </ul>
                     </div>
@@ -574,7 +584,63 @@ const IndexPage = props => (
                   </div>
                 </div>
               </div>
-              <div className="slide">test</div>
+              <div className="slide">
+                <div className="fullpage__slide">
+                  <div className="header work ml14">
+                    <span className="text-wrapper">
+                      <span className="letters">Work</span>
+                      <span className="line"></span>
+                    </span>
+                  </div>
+                  <div className="js-moon blog-card spring-fever parkway-volkswagen">
+                    <div className="title-content">
+                      <h3>
+                        <a href="https://www.parkwayvolkswagen.co.uk/">
+                          Parkway Volkswagen Website
+                        </a>
+                      </h3>
+                      <div className="intro">
+                        {" "}
+                        <a href="https://www.parkwayvolkswagen.co.uk/">
+                          Website
+                        </a>{" "}
+                      </div>
+                    </div>
+                    <div className="card-info">
+                      Website built for the Parkway Volkswagen Dealerships in
+                      England. Project included building multiple dynamic
+                      websites for different dealerships that are linked with
+                      internal managements systems, APIs and a custom CMS
+                      platform.
+                      <a href="https://www.parkwayvolkswagen.co.uk/">
+                        Visit Website
+                        <span className="licon icon-arr icon-black"></span>
+                      </a>
+                    </div>
+                    <div className="utility-info">
+                      <ul className="utility-list">
+                        <li>
+                          <span className="licon"></span>
+                          <a href="https://vuejs.org/">Laravel</a>
+                        </li>
+                        <li>
+                          <span className="licon"></span>
+                          <a href="https://gridsome.org/">Redis & MySQL</a>
+                        </li>
+                        <li>
+                          <span className="licon"></span>Vue
+                        </li>
+                        <li>
+                          <span className="licon"></span>Custom built CMS
+                          platform
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="gradient-overlay"></div>
+                    <div className="color-overlay"></div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="section contact">
               <div className="fullpage__slide">
@@ -591,10 +657,27 @@ const IndexPage = props => (
                     <div className="cover second"></div>
                     <div className="cover third"></div>
                     <div className="wrapper">
-                      <div className="row">
-                        <div className="col"></div>
-                        <div className="col"></div>
-                      </div>
+                      <form
+                        method="post"
+                        netlify-honeypot="bot-field"
+                        data-netlify="true"
+                        name="contact"
+                      >
+                        <label>
+                          Email
+                          <input type="email" name="email" />
+                        </label>
+                        <label>
+                          Name
+                          <input type="text" name="name" />
+                        </label>
+                        <label>
+                          Message
+                          <input type="text" name="message" />
+                        </label>
+                        <input type="hidden" name="bot-field" />
+                        <input type="hidden" name="form-name" value="contact" />
+                      </form>
                     </div>
                   </div>
                 </div>

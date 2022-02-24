@@ -3198,7 +3198,6 @@ figcaption svg {
 }
 
 .project-image-container {
-  background-image: url("../static/tahiti-badminton-federation-website.png");
   background-size: 100%;
   background-repeat: no-repeat;
   max-height: 510px;
@@ -3400,7 +3399,13 @@ figcaption svg {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   text-align: center;
   //transition:all 0.4s;
-  background: url("../static/tahiti-badminton-federation-website.png") center no-repeat;
+}
+.blog-card.tahiti-badminton-federation {
+  background: url("../static/tahiti-badminton-federation-website.jpg") center no-repeat;
+  background-size: 100%;
+}
+.blog-card.parkway-volkswagen {
+  background: url("../static/home-parkway-volkswagen.jpg") center no-repeat;
   background-size: 100%;
 }
 .blog-card a{ 
@@ -3523,7 +3528,7 @@ h3:after {
 
 .card-info a{
   display:block;
-  width:100px;
+  width:120px;
   margin:15px auto;
   background:#fff;
   color:#444;
@@ -3564,10 +3569,10 @@ h3:after {
 }
 .utility-list {
   list-style-type: none;
-  margin: 0 0 10px 20px;
+  margin: 0 0 10px 0;
   padding: 0;
   width: 100%;
-
+  text-align: center;
 }
 .utility-list li {
   margin: 0 5px 0 0;
