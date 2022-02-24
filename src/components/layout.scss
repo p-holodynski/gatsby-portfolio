@@ -872,10 +872,10 @@ img {
   }
 }
 .title .border {
-  display: inline-flex;
+  display: block;
   margin-bottom: 3.2rem;
-  flex-direction: column;
-  margin-left: 40px;
+  // flex-direction: column;
+  // margin-left: 40px;
 }
 @media screen and (max-width: 420px) {
   .title .border {
