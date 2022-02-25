@@ -80,6 +80,15 @@ const IndexPage = props => (
             "<span class='letter'>$&</span>"
           )
 
+          var textWrapperHeaderContact = document.querySelector(
+            ".header.contact.ml12 .text-wrapper"
+          )
+          textWrapperHeaderContact.innerHTML =
+            textWrapperHeaderContact.textContent.replace(
+              /\S/g,
+              "<span class='letter'>$&</span>"
+            )
+
         console.log("onLeave event", { origin, destination, direction })
         var background1 =
           "linear-gradient(to left, #ffbd8b, #ffbd8b, #7da3be, #7da3be, #7da3be)"
@@ -96,6 +105,7 @@ const IndexPage = props => (
               backgroundImage: [background2, background1],
               duration: 100,
             })
+
           anime
             .timeline({
               loop: false,
@@ -182,7 +192,7 @@ const IndexPage = props => (
             )
 
           anime({
-            targets: ".js-moon",
+            targets: ".js-parallax-moon",
             translateX: ["100%", 0],
             translateZ: 0,
             opacity: [0, 1],
@@ -194,7 +204,7 @@ const IndexPage = props => (
           })
 
           anime({
-            targets: ".card",
+            targets: ".card.skills",
             translateX: [0, "100%"],
             translateZ: 0,
             opacity: [1, 0],
@@ -215,6 +225,7 @@ const IndexPage = props => (
               backgroundImage: [background1, background2],
               duration: 100,
             })
+
           anime
             .timeline({
               loop: false,
@@ -251,7 +262,7 @@ const IndexPage = props => (
           })
 
           anime({
-            targets: ".js-moon",
+            targets: ".js-parallax-moon",
             translateX: [0, "100%"],
             translateZ: 0,
             opacity: [1, 0],
@@ -267,7 +278,7 @@ const IndexPage = props => (
               loop: false,
             })
             .add({
-              targets: ".card",
+              targets: ".card.skills",
               translateX: ["100%", 0],
               translateZ: 0,
               opacity: [0, 1],
@@ -382,6 +393,63 @@ const IndexPage = props => (
               },
               "-=1500"
             )
+
+            anime({
+              targets: ".contact.card.js-moon, .header.contact.ml14",
+              translateX: [0, "100%"],
+              translateZ: 0,
+              opacity: [1, 0],
+              easing: "easeOutCubic",
+              duration: 800,
+              delay: function (el, i) {
+                return 50 * i
+              },
+            })
+        }
+
+        if (destination.index === 3) {
+          anime({
+            targets: ".blog-card.js-moon, .header.work.ml14",
+            translateX: [0, "100%"],
+            translateZ: 0,
+            opacity: [1, 0],
+            easing: "easeOutCubic",
+            duration: 800,
+            delay: function (el, i) {
+              return 50 * i
+            },
+          })
+
+          anime
+            .timeline({
+              loop: false,
+            })
+            .add(
+              {
+                targets: ".contact.card",
+                translateX: ["100%", 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                easing: "easeOutCubic",
+                duration: 800,
+                delay: function (el, i) {
+                  return 500 + 50 * i
+                },
+              }
+            )
+            .add(
+              {
+                targets: ".header.contact.ml12 .letter",
+                translateX: [40, 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                easing: "easeOutExpo",
+                duration: 800,
+                delay: (el, i) => 100 + 30 * i,
+              },
+              "-=400"
+            )
+            
         }
       }}
       render={({ state, fullpageApi }) => {
@@ -423,7 +491,7 @@ const IndexPage = props => (
             </div>
             <div className="section skills">
               <div className="fullpage__slide">
-                <div className="card js-moon">
+                <div className="card js-moon skills">
                   <div className="header skills ml12">
                     <span className="text-wrapper">Skills</span>
                   </div>
@@ -534,8 +602,8 @@ const IndexPage = props => (
                 <div className="fullpage__slide">
                   <div className="header work ml14">
                     <span className="text-wrapper">
-                      <span class="letters">Work</span>
-                      <span class="line"></span>
+                      <span className="letters">Work</span>
+                      <span className="line"></span>
                     </span>
                   </div>
                   <div className="js-moon blog-card spring-fever tahiti-badminton-federation">
@@ -641,11 +709,58 @@ const IndexPage = props => (
                   </div>
                 </div>
               </div>
+              <div className="slide">
+                <div className="fullpage__slide">
+                  <div className="header work ml14">
+                    <span className="text-wrapper">
+                      <span className="letters">Work</span>
+                      <span className="line"></span>
+                    </span>
+                  </div>
+                  <div className="js-moon blog-card spring-fever hrstolinska">
+                    <div className="title-content">
+                      <h3>
+                        <a href="https://hrbystolinska.pl/">
+                          HR Freelancer Website
+                        </a>
+                      </h3>
+                      <div className="intro">
+                        {" "}
+                        <a href="https://hrbystolinska.pl/">
+                          Website
+                        </a>{" "}
+                      </div>
+                    </div>
+                    <div className="card-info">
+                      Website built for the HR Freelancer in
+                      Poland. Using Wordpress and Divi Theme builder to deliver an easy to maintain personal website.
+                      <a href="https://hrbystolinska.pl/">
+                        Visit Website
+                        <span className="licon icon-arr icon-black"></span>
+                      </a>
+                    </div>
+                    <div className="utility-info">
+                      <ul className="utility-list">
+                        <li>
+                          <span className="licon"></span>
+                          <a href="https://wordpress.com/">WordPress</a>
+                        </li>
+                        <li>
+                          <span className="licon"></span>
+                          <a href="https://www.elegantthemes.com/">Divi Theme Builder</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="gradient-overlay"></div>
+                    <div className="color-overlay"></div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="section contact">
               <div className="fullpage__slide">
-                <div className="card js-moon">
-                  <div className="header skills ml12">
+                <div className="card contact js-moon">
+                  <div className="header contact ml12">
                     <span className="text-wrapper">Contact</span>
                   </div>
                   <div className="announcement">
