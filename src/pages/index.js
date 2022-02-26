@@ -21,12 +21,25 @@ import webDesignLogo from "../static/design-skills.svg"
 import responsiveLogo from "../static/responsive.svg"
 import seoLogo from "../static/seo.svg"
 import pageSpeedLogo from "../static/rocket-ship.svg"
+import ContactForm from "../components/contactForm"
 
 const IndexPage = props => (
   <div>
     <ReactFullpage
       //fullpage options
-      scrollingSpeed={1000} /* Options here */
+      //Navigation
+      easingcss3={"cubic-bezier(0.645, 0.045, 0.355, 1)"}
+      scrollingSpeed={1e3}
+      anchors={[
+        "home-section",
+        "skills-section",
+        "work-section",
+        "contact-section",
+      ]}
+      navigation={!0}
+      navigationPosition={"bottom"}
+      animateAnchor={!1}
+      lazyLoading={true}
       //sectionsColor={["yellow", "orange", "#C0C0C0", "#ADD8E6"]}
       onLeave={(origin, destination, direction) => {
         // Wrap every letter in a span
@@ -80,22 +93,29 @@ const IndexPage = props => (
             "<span class='letter'>$&</span>"
           )
 
-          var textWrapperHeaderContact = document.querySelector(
-            ".header.contact.ml12 .text-wrapper"
+        var textWrapperHeaderContact = document.querySelector(
+          ".header.contact.ml12 .text-wrapper"
+        )
+        textWrapperHeaderContact.innerHTML =
+          textWrapperHeaderContact.textContent.replace(
+            /\S/g,
+            "<span class='letter'>$&</span>"
           )
-          textWrapperHeaderContact.innerHTML =
-            textWrapperHeaderContact.textContent.replace(
-              /\S/g,
-              "<span class='letter'>$&</span>"
-            )
 
         console.log("onLeave event", { origin, destination, direction })
         var background1 =
           "linear-gradient(to left, #ffbd8b, #ffbd8b, #7da3be, #7da3be, #7da3be)"
         var background2 =
           "linear-gradient(to top left, #ffbd8b, #ffbd8b, #7da3be, #7da3be, #24344b)"
-
+        var background3 =
+          "linear-gradient(to top left, #ffbd8b, #ffbd8b, #7da3be, #24344b, #24344b)"
+        var background4 =
+          "linear-gradient(to top left, #ffbd8b, #7da3be, #24344b, #24344b, #24344b)"
+        if (destination.index !== 0) {
+          document.querySelector(".star").style.display = "block";
+        }
         if (destination.index === 0) {
+          document.querySelector(".star").style.display = "none";
           anime
             .timeline({
               loop: false,
@@ -104,6 +124,7 @@ const IndexPage = props => (
               targets: ".sky-color",
               backgroundImage: [background2, background1],
               duration: 100,
+              easing: "easeOutCubic",
             })
 
           anime
@@ -113,7 +134,8 @@ const IndexPage = props => (
             .add({
               targets: ".moonlight",
               top: ["75%", "0"],
-              duration: 1000,
+              duration: 2000,
+              easing: "easeOutCubic",
               delay: (el, i) => 45 * (i + 1),
             })
 
@@ -216,16 +238,7 @@ const IndexPage = props => (
           })
         }
         if (destination.index === 1) {
-          anime
-            .timeline({
-              loop: false,
-            })
-            .add({
-              targets: ".sky-color",
-              backgroundImage: [background1, background2],
-              duration: 100,
-            })
-
+          if(direction === "down") {
           anime
             .timeline({
               loop: false,
@@ -233,9 +246,37 @@ const IndexPage = props => (
             .add({
               targets: ".moonlight",
               top: ["0", "75%"],
-              duration: 1000,
+              duration: 2000,
+              easing: "easeOutCubic",
               delay: (el, i) => 45 * (i + 1),
             })
+            .add({
+              targets: ".sky-color",
+              backgroundImage: [background1, background2],
+              duration: 100,
+              easing: "easeOutCubic",
+            }, "-=3000")
+          }
+
+            if(direction === "up") {
+              anime
+                .timeline({
+                  loop: false,
+                })
+                .add({
+                  targets: ".moonlight",
+                  top: ["1000px", "75%"],
+                  easing: "easeOutCubic",
+                  duration: 2000,
+                  delay: (el, i) => 45 * (i + 1),
+                })
+                .add({
+                  targets: ".sky-color",
+                  easing: "easeOutCubic",
+                  backgroundImage: [background3, background2],
+                  duration: 1000,
+                }, "-=3000")
+              }
 
           anime({
             targets: ".js-letter",
@@ -334,6 +375,46 @@ const IndexPage = props => (
           })
         }
         if (destination.index === 2) {
+          if(direction === "down") {
+          anime
+            .timeline({
+              loop: false,
+            })
+            .add({
+              targets: ".moonlight",
+              top: ["75%", "1000px"],
+              easing: "easeOutCubic",
+              duration: 2000,
+              delay: (el, i) => 45 * (i + 1),
+            })
+            .add({
+              targets: ".sky-color",
+              easing: "easeOutCubic",
+              backgroundImage: [background2, background3],
+              duration: 1000,
+            }, "-=3000")
+          }
+
+          if(direction === "up") {
+            anime
+              .timeline({
+                loop: false,
+              })
+              .add({
+                targets: ".moonlight",
+                top: ["1000px", "75%"],
+                easing: "easeOutCubic",
+                duration: 2000,
+                delay: (el, i) => 45 * (i + 1),
+              })
+              .add({
+                targets: ".sky-color",
+                easing: "easeOutCubic",
+                backgroundImage: [background4, background3],
+                duration: 1000,
+              }, "-=3000")
+            }
+
           anime({
             targets: ".card.js-moon",
             translateX: [0, "100%"],
@@ -394,20 +475,38 @@ const IndexPage = props => (
               "-=1500"
             )
 
-            anime({
-              targets: ".contact.card.js-moon, .header.contact.ml14",
-              translateX: [0, "100%"],
-              translateZ: 0,
-              opacity: [1, 0],
-              easing: "easeOutCubic",
-              duration: 800,
-              delay: function (el, i) {
-                return 50 * i
-              },
-            })
+          anime({
+            targets: ".contact.card.js-moon, .header.contact.ml14",
+            translateX: [0, "100%"],
+            translateZ: 0,
+            opacity: [1, 0],
+            easing: "easeOutCubic",
+            duration: 800,
+            delay: function (el, i) {
+              return 50 * i
+            },
+          })
         }
 
         if (destination.index === 3) {
+          anime
+            .timeline({
+              loop: false,
+            })
+            .add({
+              targets: ".moonlight",
+              top: ["1000px", "2000px"],
+              easing: "easeOutCubic",
+              duration: 2000,
+              delay: (el, i) => 45 * (i + 1),
+            })
+            .add({
+              targets: ".sky-color",
+              easing: "easeOutCubic",
+              backgroundImage: [background3, background4],
+              duration: 1000,
+            }, "-=3000")
+
           anime({
             targets: ".blog-card.js-moon, .header.work.ml14",
             translateX: [0, "100%"],
@@ -424,19 +523,17 @@ const IndexPage = props => (
             .timeline({
               loop: false,
             })
-            .add(
-              {
-                targets: ".contact.card",
-                translateX: ["100%", 0],
-                translateZ: 0,
-                opacity: [0, 1],
-                easing: "easeOutCubic",
-                duration: 800,
-                delay: function (el, i) {
-                  return 500 + 50 * i
-                },
-              }
-            )
+            .add({
+              targets: ".contact.card",
+              translateX: ["100%", 0],
+              translateZ: 0,
+              opacity: [0, 1],
+              easing: "easeOutCubic",
+              duration: 800,
+              delay: function (el, i) {
+                return 500 + 50 * i
+              },
+            })
             .add(
               {
                 targets: ".header.contact.ml12 .letter",
@@ -449,7 +546,6 @@ const IndexPage = props => (
               },
               "-=400"
             )
-            
         }
       }}
       render={({ state, fullpageApi }) => {
@@ -484,9 +580,6 @@ const IndexPage = props => (
                   </p>
                 </div>
                 <Moon />
-                {/* <button onClick={() => fullpageApi.moveSectionDown()}>
-                  Click me to move down
-                </button> */}
               </div>
             </div>
             <div className="section skills">
@@ -726,14 +819,13 @@ const IndexPage = props => (
                       </h3>
                       <div className="intro">
                         {" "}
-                        <a href="https://hrbystolinska.pl/">
-                          Website
-                        </a>{" "}
+                        <a href="https://hrbystolinska.pl/">Website</a>{" "}
                       </div>
                     </div>
                     <div className="card-info">
-                      Website built for the HR Freelancer in
-                      Poland. Using Wordpress and Divi Theme builder to deliver an easy to maintain personal website.
+                      Website built for the HR Freelancer in Poland. Using
+                      Wordpress and Divi Theme builder to deliver an easy to
+                      maintain personal website.
                       <a href="https://hrbystolinska.pl/">
                         Visit Website
                         <span className="licon icon-arr icon-black"></span>
@@ -747,7 +839,9 @@ const IndexPage = props => (
                         </li>
                         <li>
                           <span className="licon"></span>
-                          <a href="https://www.elegantthemes.com/">Divi Theme Builder</a>
+                          <a href="https://www.elegantthemes.com/">
+                            Divi Theme Builder
+                          </a>
                         </li>
                       </ul>
                     </div>
@@ -771,29 +865,7 @@ const IndexPage = props => (
                     <div className="cover first"></div>
                     <div className="cover second"></div>
                     <div className="cover third"></div>
-                    <div className="wrapper">
-                      <form
-                        method="post"
-                        netlify-honeypot="bot-field"
-                        data-netlify="true"
-                        name="contact"
-                      >
-                        <label>
-                          Email
-                          <input type="email" name="email" />
-                        </label>
-                        <label>
-                          Name
-                          <input type="text" name="name" />
-                        </label>
-                        <label>
-                          Message
-                          <input type="text" name="message" />
-                        </label>
-                        <input type="hidden" name="bot-field" />
-                        <input type="hidden" name="form-name" value="contact" />
-                      </form>
-                    </div>
+                    <div className="wrapper">{/* <ContactForm /> */}</div>
                   </div>
                 </div>
               </div>
