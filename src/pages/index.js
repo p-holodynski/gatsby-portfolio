@@ -236,6 +236,21 @@ const IndexPage = props => (
               return 50 * i
             },
           })
+          // if(direction === "up") {
+          //   anime
+          //     .timeline({
+          //       loop: false,
+          //     })
+          //     .add(
+          //       {
+          //         targets: ".announcement .row .col div",
+          //         opacity: [1, 0],
+          //         easing: "easeOutCubic",
+          //         duration: 100,
+          //         delay: (el, i) => i * 100,
+          //       },
+          //       "0")
+          //   }
         }
         if (destination.index === 1) {
           if(direction === "down") {
