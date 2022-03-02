@@ -1384,6 +1384,7 @@ img {
   background: #020b16;
   top: 0;
   left: 0;
+  z-index: 99999;
 }
 .loader.js-hidden {
   display: none;
@@ -1757,7 +1758,7 @@ header .global-nav__sns a:last-child {
   margin: 0;
   // -webkit-transform: translate3d(0, -50%, 0);
   // transform: translate3d(0, -50%, 0);
-  width: 100%;
+  width: auto !important;
   left: 20px;
   overflow: hidden;
   bottom: 0px;
@@ -1773,7 +1774,7 @@ header .global-nav__sns a:last-child {
 }
 @media screen and (max-width: 1250px) {
   #fp-nav {
-    width: 100%;
+    width: 100% !important;
     top: auto !important;
     left: 0;
     display: flex;

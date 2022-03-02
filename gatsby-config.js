@@ -4,7 +4,7 @@ module.exports = {
     description: `Portfolio Website`,
     author: `@patrykholodynski`,
     siteUrl: `https://p-holodynski.netlify.app`,
-    image: "src/static/logo.svg",
+    image: "src/static/logo.png",
     keywords: `freelance, fullstack, developer, portfolio`,
   },
   plugins: [
@@ -26,7 +26,7 @@ module.exports = {
         short_name: `starter`,
         start_url: `/`,
         display: `minimal-ui`,
-        icon: `src/static/logo.svg`, // This path is relative to the root of the site.
+        icon: `src/static/logo.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
