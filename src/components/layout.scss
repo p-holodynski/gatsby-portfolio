@@ -860,7 +860,7 @@ img {
 }
 @media screen and (max-width: 420px) {
   .title__text {
-    font-size: 3.8rem;
+    font-size: 3.8rem !important;
     margin-bottom: 0.8rem;
     text-shadow: 0 3px 10px rgba(2, 11, 22, 0.5);
   }
