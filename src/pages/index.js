@@ -1028,11 +1028,6 @@ const IndexPage = props => (
                           name="message"
                           placeholder="Your message"
                         ></textarea>
-                        <input
-                          type="hidden"
-                          name="form-name"
-                          value="contact-me-form"
-                        />
                         <button type="submit">Send</button>
                       </form>
                     </div>
