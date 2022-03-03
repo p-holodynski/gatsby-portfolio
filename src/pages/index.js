@@ -1007,7 +1007,7 @@ const IndexPage = props => (
                         width={200}
                         height={200}
                       />
-                      <p>I'm available for work, get in touch!</p>
+                      <p>I'm available for work, get in touch</p>
                       <form
                         name="contact-me-form"
                         method="POST"
