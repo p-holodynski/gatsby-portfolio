@@ -122,7 +122,126 @@ const IndexPage = props => (
       navigationPosition={"bottom"}
       animateAnchor={!1}
       lazyLoading={true}
-      //sectionsColor={["yellow", "orange", "#C0C0C0", "#ADD8E6"]}
+      afterRender={() => {
+        // Wrap every letter in a span
+        var textWrapperFirstName = document.querySelector(
+          ".ml9 .lettersFirstName"
+        )
+        textWrapperFirstName.innerHTML =
+          textWrapperFirstName.textContent.replace(
+            /\S/g,
+            "<span class='letter'>$&</span>"
+          )
+        var textWrapperLastName = document.querySelector(
+          ".ml9 .lettersLastName"
+        )
+        textWrapperLastName.innerHTML = textWrapperLastName.textContent.replace(
+          /\S/g,
+          "<span class='letter'>$&</span>"
+        )
+        var textWrapperPositionFirstRow = document.querySelector(
+          ".ml12 .lettersFirstRowPosition"
+        )
+        textWrapperPositionFirstRow.innerHTML =
+          textWrapperPositionFirstRow.textContent.replace(
+            /\S/g,
+            "<span class='letter'>$&</span>"
+          )
+        var textWrapperPositionLastRow = document.querySelector(
+          ".ml12 .lettersLastRowPosition"
+        )
+        textWrapperPositionLastRow.innerHTML =
+          textWrapperPositionLastRow.textContent.replace(
+            /\S/g,
+            "<span class='letter'>$&</span>"
+          )
+
+        anime
+          .timeline({
+            loop: false,
+          })
+          .add({
+            targets: ".js-letter",
+            translateX: ["-100%", "0%"],
+            translateZ: 0,
+            opacity: [0, 1],
+            easing: "easeOutCubic",
+            duration: 800,
+            delay: function (el, i) {
+              return 50 * i
+            },
+          })
+          .add(
+            {
+              targets: ".ml9 .lettersFirstName .letter",
+              scale: [0, 1],
+              duration: 1000,
+              elasticity: 600,
+              delay: (el, i) => 30 * (i + 1),
+            },
+            500
+          )
+          .add(
+            {
+              targets: ".ml9 .lettersLastName .letter",
+              scale: [0, 1],
+              duration: 1000,
+              elasticity: 600,
+              delay: (el, i) => 30 * (i + 1),
+            },
+            "-=200"
+          )
+          .add(
+            {
+              targets: ".js-letter-lines",
+              translateX: ["100%", 0],
+              translateZ: 0,
+              opacity: [0, 1],
+              easing: "easeOutCubic",
+              duration: 800,
+              delay: function (el, i) {
+                return 500 + 50 * i
+              },
+            },
+            "-=1000"
+          )
+          .add(
+            {
+              targets: ".ml12 .lettersFirstRowPosition .letter",
+              translateX: [40, 0],
+              translateZ: 0,
+              opacity: [0, 1],
+              easing: "easeOutExpo",
+              duration: 800,
+              delay: (el, i) => 100 + 30 * i,
+            },
+            "-=200"
+          )
+          .add(
+            {
+              targets: ".ml12 .lettersLastRowPosition .letter",
+              translateX: [40, 0],
+              translateZ: 0,
+              opacity: [0, 1],
+              easing: "easeOutExpo",
+              duration: 800,
+              delay: (el, i) => 100 + 30 * i,
+            },
+            "-=400"
+          )
+
+        anime({
+          targets: ".js-parallax-moon",
+          translateX: ["100%", 0],
+          translateZ: 0,
+          opacity: [0, 1],
+          easing: "easeOutCubic",
+          duration: 800,
+          delay: function (el, i) {
+            return 500 + 50 * i
+          },
+        })
+      }}
       onLeave={(origin, destination, direction) => {
         // This will return the width of the viewport
         var intFrameWidth = window.innerWidth
@@ -995,7 +1114,7 @@ const IndexPage = props => (
                     <div className="cover second"></div>
                     <div className="cover third"></div>
                     <div className="wrapper">
-                    <StaticImage
+                      <StaticImage
                         style={{
                           margin: "auto",
                           borderRadius: "20px",
@@ -1041,8 +1160,6 @@ const IndexPage = props => (
     />
     <MoonBackground />
     <StarBackground />
-    <div className="curtain"></div>
-    <div className="loader"></div>
   </Layout>
 )
 

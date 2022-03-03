@@ -17,9 +17,9 @@ class Moon extends Component {
         translateZ: 0,
         easing: "easeInOutCubic",
         duration: 800,
-        complete: function () {
-          document.querySelector(".loader").classList.add(".js-hidden")
-        },
+        // complete: function () {
+        //   document.querySelector(".loader").classList.add(".js-hidden")
+        // },
       })
       .add({
         targets: ".js-moon",

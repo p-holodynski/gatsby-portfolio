@@ -8,8 +8,6 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
 import "./layout.scss"
 
 const Layout = ({ children }) => {
@@ -34,6 +32,8 @@ const Layout = ({ children }) => {
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
+        {/* <div className="curtain"></div>
+        <div className="loader"></div> */}
         <main>{children}</main>
         <footer
           style={{
