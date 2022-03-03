@@ -4,6 +4,7 @@ html {
   font: 112.5%/1.45em georgia, serif, sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
+  background-color: black;
 }
 body {
   margin: 0;
@@ -3100,6 +3101,9 @@ figcaption svg {
     font-size: 20px;
     letter-spacing: normal;
   }
+  .blog-card .gatsby-image-wrapper {
+    top: 110px;
+  }
 }
 
 .row {
@@ -3456,19 +3460,19 @@ figcaption svg {
   text-align: center;
   //transition:all 0.4s;
 }
-.blog-card.tahiti-badminton-federation {
-  background: url("../static/tahiti-badminton-federation-website.jpg") center
-    no-repeat;
-  background-size: 100%;
-}
-.blog-card.parkway-volkswagen {
-  background: url("../static/home-parkway-volkswagen.jpg") center no-repeat;
-  background-size: 100%;
-}
-.blog-card.hrstolinska {
-  background: url("../static/hrbymartynastolinska.jpg") center no-repeat;
-  background-size: 100%;
-}
+// .blog-card.tahiti-badminton-federation {
+//   background: url("../static/tahiti-badminton-federation-website.jpg") center
+//     no-repeat;
+//   background-size: 100%;
+// }
+// .blog-card.parkway-volkswagen {
+//   background: url("../static/home-parkway-volkswagen.jpg") center no-repeat;
+//   background-size: 100%;
+// }
+// .blog-card.hrstolinska {
+//   background: url("../static/hrbymartynastolinska.jpg") center no-repeat;
+//   background-size: 100%;
+// }
 .blog-card a {
   color: #fff;
   text-decoration: none;
@@ -3714,6 +3718,9 @@ h3:after {
   .blog-card:hover .title-content,
   .title-content {
     margin-top: 5px;
+  }
+  .blog-card .gatsby-image-wrapper {
+    top: 110px;
   }
   // .blog-card{
   //   height:300px

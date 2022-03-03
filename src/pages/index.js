@@ -339,14 +339,17 @@ const IndexPage = props => (
               duration: 100,
               easing: "easeOutCubic",
             })
-
-          anime
+            var topValue = "0"
+            if (intFrameWidth <= 420) {
+              topValue = "-10rem"
+            }
+            anime
             .timeline({
               loop: false,
             })
             .add({
               targets: ".moonlight",
-              top: ["75%", "0"],
+              top: ["75%", topValue],
               duration: 2000,
               easing: "easeOutCubic",
               delay: (el, i) => 45 * (i + 1),
@@ -948,6 +951,13 @@ const IndexPage = props => (
                     </span>
                   </div>
                   <div className="js-moon blog-card spring-fever tahiti-badminton-federation">
+                    <StaticImage 
+                    src="../static/tahiti-badminton-federation-website.jpg"
+                    alt="tahiti badminton"
+                    placeholder="blurred"
+                    layout="constrained"
+                    height={450}
+                    />
                     <div className="title-content">
                       <h3>
                         <a href="https://ftbadminton.pf/">
@@ -1002,6 +1012,13 @@ const IndexPage = props => (
                     </span>
                   </div>
                   <div className="js-moon blog-card spring-fever parkway-volkswagen">
+                  <StaticImage 
+                    src="../static/home-parkway-volkswagen.jpg"
+                    alt="parkway volkswagen"
+                    placeholder="blurred"
+                    layout="constrained"
+                    height={450}
+                    />
                     <div className="title-content">
                       <h3>
                         <a href="https://www.parkwayvolkswagen.co.uk/">
@@ -1059,6 +1076,13 @@ const IndexPage = props => (
                     </span>
                   </div>
                   <div className="js-moon blog-card spring-fever hrstolinska">
+                  <StaticImage 
+                    src="../static/hrbymartynastolinska.jpg"
+                    alt="parkway volkswagen"
+                    placeholder="blurred"
+                    layout="constrained"
+                    height={450}
+                    />
                     <div className="title-content">
                       <h3>
                         <a href="https://hrbystolinska.pl/">
