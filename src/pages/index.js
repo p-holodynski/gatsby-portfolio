@@ -1011,7 +1011,6 @@ const IndexPage = props => (
                       <form
                         name="contact-me-form"
                         method="POST"
-                        action="https://getform.io/f/7e0cc938-3770-4dfa-a9b8-91d4c57dc8ad"
                         className="contact-me"
                       >
                         <input
