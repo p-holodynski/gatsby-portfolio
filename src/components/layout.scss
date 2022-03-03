@@ -2875,14 +2875,6 @@ header .global-nav__sns a:last-child {
   max-width: 980px;
 }
 
-@media screen and (max-width: 420px) {
-  .card.skills, .card.contact {
-    background: transparent;
-    width: 100%;
-    box-shadow: none;
-  }
-}
-
 .card-flippable-wrapper {
   perspective: 600px;
   position: relative;
@@ -3075,6 +3067,39 @@ figcaption svg {
   margin: 0 auto;
   max-width: 980px;
   width: 100%;
+}
+
+.card.contact {
+  background: transparent;
+  box-shadow: none;
+}
+
+.card.contact .wrapper {
+  font-size: 24px;
+  letter-spacing: 0.1em;
+  text-shadow: 0 10px 15px rgba(2, 11, 22, 0.2);
+  font-weight: 800;
+  color: #ffe9ad;
+}
+
+.card.contact .wrapper .mail-contact a {
+  color: #ff4d5a;
+}
+
+@media screen and (max-width: 420px) {
+  .card.skills,
+  .card.contact {
+    background: transparent;
+    width: 100%;
+    box-shadow: none;
+  }
+  .card.contact .gatsby-image-wrapper {
+    max-width: 140px;
+  }
+  .card.contact .wrapper {
+    font-size: 20px;
+    letter-spacing: normal;
+  }
 }
 
 .row {
@@ -3709,7 +3734,8 @@ h3:after {
   border-width: 18.5px 0 18.5px 14px !important;
   border-color: transparent transparent transparent #fff;
 }
-.contact-me input, .contact-me textarea {
+.contact-me input,
+.contact-me textarea {
   background: #24344b;
   border: 0;
   box-sizing: border-box;
@@ -3734,7 +3760,9 @@ h3:after {
 }
 
 @media only screen and (max-width: 420px) {
-  .contact-me input, .contact-me textarea, .contact-me button {
+  .contact-me input,
+  .contact-me textarea,
+  .contact-me button {
     border: 1px solid #ffe9ad;
   }
 }
