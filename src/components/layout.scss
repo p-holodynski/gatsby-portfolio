@@ -1369,8 +1369,8 @@ img {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: #020b16;
-  z-index: 99999;
+  background: #24344b;
+  z-index: 999;
   -webkit-transform: translate3d(0, 100%, 0);
   transform: translate3d(0, 100%, 0);
 }
@@ -1378,10 +1378,10 @@ img {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: #020b16;
+  background: #24344b;
   top: 0;
   left: 0;
-  z-index: 99999;
+  z-index: 999;
 }
 .loader.js-hidden {
   display: none;

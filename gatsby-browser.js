@@ -8,9 +8,3 @@
 
 import "./src/styles/preloader.scss"
 import "./src/scripts/preloader.js"
-
-// export const onInitialClientRender = () => {
-    // setTimeout(function() {
-    //     document.getElementById("preloader").style.opa = "0"
-    // }, 1000)
-// }
