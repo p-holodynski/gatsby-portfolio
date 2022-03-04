@@ -851,40 +851,40 @@ const IndexPage = props => (
                       <div className="row">
                         <div className="col">
                           <div className="skill-icon">
-                            <img src={phpLogo} />
+                            <img src={phpLogo}  width={50} height={50}/>
                           </div>
                           <div className="skill-icon-wrapper">
-                            <img src={laravelLogo} />
+                            <img src={laravelLogo} width={50} height={50}/>
                             <span>Laravel</span>
                           </div>
                           <div className="skill-icon-wrapper">
-                            <img src={wordpressLogo} />
+                            <img src={wordpressLogo}  width={50} height={50}/>
                             <span>Wordpress</span>
                           </div>
                         </div>
                         <div className="col">
                           <div className="skill-icon">
-                            <img src={javascriptLogo} />
+                            <img src={javascriptLogo}  width={50} height={50}/>
                           </div>
                           <div className="skill-icon-wrapper">
-                            <img src={reactLogo} />
+                            <img src={reactLogo}  width={50} height={50}/>
                             <span>React</span>
                           </div>
                           <div className="skill-icon-wrapper">
-                            <img src={vueLogo} />
+                            <img src={vueLogo}  width={50} height={50}/>
                             <span>Vue</span>
                           </div>
                         </div>
                         <div className="col">
                           <div className="skill-icon">
-                            <img src={serverlessLogo} />
+                            <img src={serverlessLogo}  width={50} height={50}/>
                           </div>
                           <div className="skill-icon-wrapper">
-                            <img src={gatsbyLogo} />
+                            <img src={gatsbyLogo}  width={50} height={50}/>
                             <span>Gatsby</span>
                           </div>
                           <div className="skill-icon-wrapper">
-                            <img src={gridsomeLogo} />
+                            <img src={gridsomeLogo}  width={50} height={50}/>
                             <span>Gridsome</span>
                           </div>
                         </div>
@@ -892,40 +892,40 @@ const IndexPage = props => (
                       <div className="row">
                         <div className="col">
                           <div className="skill-icon">
-                            <img src={databaseLogo} />
+                            <img src={databaseLogo}  width={50} height={50}/>
                           </div>
                           <div className="skill-icon-wrapper">
-                            <img src={mysqlLogo} />
+                            <img src={mysqlLogo}  width={50} height={50}/>
                             <span>MySQL</span>
                           </div>
                           <div className="skill-icon-wrapper">
-                            <img src={redisLogo} />
+                            <img src={redisLogo}  width={50} height={50}/>
                             <span>Redis</span>
                           </div>
                         </div>
                         <div className="col">
                           <div className="skill-icon">
-                            <img src={webDesignLogo} />
+                            <img src={webDesignLogo}  width={50} height={50}/>
                           </div>
                           <div className="skill-icon-wrapper">
-                            <img src={uxDesignLogo} />
+                            <img src={uxDesignLogo}  width={50} height={50}/>
                             <span>UX/UI Design</span>
                           </div>
                           <div className="skill-icon-wrapper">
-                            <img src={responsiveLogo} />
+                            <img src={responsiveLogo}  width={50} height={50}/>
                             <span>Responsive</span>
                           </div>
                         </div>
                         <div className="col">
                           <div className="skill-icon">
-                            <img src={seoLogo} />
+                            <img src={seoLogo}  width={50} height={50}/>
                           </div>
                           <div className="skill-icon-wrapper">
-                            <img src={pageSpeedLogo} />
+                            <img src={pageSpeedLogo}  width={50} height={50}/>
                             <span>Fast Pages</span>
                           </div>
                           <div className="skill-icon-wrapper">
-                            <img src="" />
+                            <img src=""  width={0} height={0}/>
                             <span></span>
                           </div>
                         </div>
