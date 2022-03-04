@@ -6,5 +6,5 @@
 
 // You can delete this file if you're not using it
 
-import "./src/styles/preloader.scss"
+import "./src/styles/preloader.css"
 import "./src/scripts/preloader.js"

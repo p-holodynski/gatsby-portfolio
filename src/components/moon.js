@@ -16,10 +16,7 @@ class Moon extends Component {
         translateY: [0, "-100%"],
         translateZ: 0,
         easing: "easeInOutCubic",
-        duration: 800,
-        // complete: function () {
-        //   document.querySelector(".loader").classList.add(".js-hidden")
-        // },
+        duration: 800
       })
       .add({
         targets: ".js-moon",
@@ -67,30 +64,28 @@ class Moon extends Component {
           </div>
           <div className="moon__front layer" data-depth="0.8">
             <div className="cloud cloud--front1 js-moon">
-              {/* <img src={cloud1} /> */}
             </div>
           </div>
           <div className="moon__back layer" data-depth="0.4">
             <div className="cloud cloud--back2 js-moon">
-              <img src={bCloud2} />
+              <img src={bCloud2} alt=""/>
             </div>
           </div>
           <div className="moon__front layer" data-depth="0.6">
             <div className="cloud cloud--front2 js-moon">
-              <img src={beach} />
+              <img src={beach} alt=""/>
             </div>
           </div>
           <div className="moon__back layer sun"data-depth="0.5">
-            <img className="js-moon" src={sun} />
+            <img className="js-moon" src={sun} alt=""/>
           </div>
           <div className="moon__front layer" data-depth="0.7">
             <div className="cloud cloud--front3 js-moon">
-              {/* <img src={cloud3} /> */}
             </div>
           </div>
           <div className="moon__back layer" data-depth="0.3">
             <div className="cloud cloud--back1 js-moon">
-              <img src={bCloud1} />
+              <img src={bCloud1} alt=""/>
             </div>
           </div>
         </div>
