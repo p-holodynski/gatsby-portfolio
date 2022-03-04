@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Patryk Holodynski Portfolio`,
     description: `Portfolio Website`,
-    author: `@patrykholodynski`,
+    author: `@p_holodynski`,
     siteUrl: `https://p-holodynski.netlify.app`,
     image: "src/static/logo.png",
     keywords: `freelance, fullstack, developer, portfolio`,

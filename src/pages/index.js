@@ -277,13 +277,13 @@ const IndexPage = props => (
         var background4 =
           "linear-gradient(to top left, #ffbd8b, #7da3be, #24344b, #24344b, #24344b)"
         if (intFrameWidth <= 420) {
-          var background1 =
+         background1 =
             "linear-gradient(to bottom, #ffbd8b, #ffbd8b, #7da3be, #7da3be, #7da3be)"
-          var background2 =
+         background2 =
             "linear-gradient(to top, #ffbd8b, #ffbd8b, #7da3be, #7da3be, #24344b)"
-          var background3 =
+         background3 =
             "linear-gradient(to top, #ffbd8b, #ffbd8b, #7da3be, #24344b, #24344b)"
-          var background4 =
+         background4 =
             "linear-gradient(to top, #ffbd8b, #7da3be, #24344b, #24344b, #24344b)"
         }
         if (destination.index !== 0) {
