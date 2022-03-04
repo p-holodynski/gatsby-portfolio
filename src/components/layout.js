@@ -26,8 +26,8 @@ const Layout = ({ children }) => {
   return (
     <>
       <div>
-        <div className="curtain"></div>
-        <div className="loader"></div>
+        {/* <div className="curtain"></div>
+        <div className="loader"></div> */}
         <main>{children}</main>
       </div>
     </>
