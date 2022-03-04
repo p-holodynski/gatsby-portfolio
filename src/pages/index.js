@@ -803,7 +803,7 @@ const IndexPage = props => (
         //console.log("render prop change", state, fullpageApi) // eslint-disable-line no-console
         return (
           <ReactFullpage.Wrapper>
-            <div className="section" id="scene">
+            <div className="section fp-auto-height-responsive" id="scene">
               <div className="fullpage__slide">
                 <div className="title title--top">
                   <h1 className="title__text js-letter ml9">
@@ -833,7 +833,7 @@ const IndexPage = props => (
                 <Moon />
               </div>
             </div>
-            <div className="section skills">
+            <div className="section skills fp-auto-height-responsive">
               <div className="fullpage__slide">
                 <div className="card js-moon skills">
                   <div className="header skills ml12">
@@ -941,7 +941,7 @@ const IndexPage = props => (
                 </div>
               </div>
             </div>
-            <div className="section work">
+            <div className="section work fp-auto-height-responsive">
               <div className="slide">
                 <div className="fullpage__slide">
                   <div className="header work ml14">
@@ -1123,7 +1123,7 @@ const IndexPage = props => (
                 </div>
               </div>
             </div>
-            <div className="section contact">
+            <div className="section contact fp-auto-height-responsive">
               <div className="fullpage__slide">
                 <div className="card contact js-moon">
                   <div className="header contact ml12">
