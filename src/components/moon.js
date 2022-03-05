@@ -12,6 +12,13 @@ class Moon extends Component {
     anime
       .timeline()
       .add({
+        targets: ".loader",
+        translateY: [0, "-100%"],
+        translateZ: 0,
+        easing: "easeInOutCubic",
+        duration: 800
+      })
+      .add({
         targets: ".js-moon",
         translateX: ["100%", 0],
         translateZ: 0,
