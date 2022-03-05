@@ -939,7 +939,6 @@ const IndexPage = props => (
                       content of the website.
                       <a href="https://ftbadminton.pf/">
                         Visit Website
-                        <span className="licon icon-arr icon-black"></span>
                       </a>
                     </div>
                     <div className="utility-info">
@@ -1002,7 +1001,6 @@ const IndexPage = props => (
                       platform.
                       <a href="https://www.parkwayvolkswagen.co.uk/">
                         Visit Website
-                        <span className="licon icon-arr icon-black"></span>
                       </a>
                     </div>
                     <div className="utility-info">
@@ -1019,8 +1017,7 @@ const IndexPage = props => (
                           <span className="licon"></span>Vue
                         </li>
                         <li>
-                          <span className="licon"></span>Custom built CMS
-                          platform
+                          <span className="licon"></span>Custom CMS
                         </li>
                       </ul>
                     </div>
@@ -1062,7 +1059,6 @@ const IndexPage = props => (
                       maintain personal website.
                       <a href="https://hrbystolinska.pl/">
                         Visit Website
-                        <span className="licon icon-arr icon-black"></span>
                       </a>
                     </div>
                     <div className="utility-info">
@@ -1102,8 +1098,7 @@ const IndexPage = props => (
                     <div className="wrapper">
                       <StaticImage
                         style={{
-                          margin: "auto",
-                          borderRadius: "20px",
+                          margin: "auto"
                         }}
                         src="../static/selfie.jpg"
                         alt="selfie"
