@@ -13,8 +13,7 @@ class Moon extends Component {
       .timeline()
       .add({
         targets: ".loader",
-        translateY: [0, "-100%"],
-        translateZ: 0,
+        opacity: [1, 0],
         easing: "easeInOutCubic",
         duration: 800
       })
