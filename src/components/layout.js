@@ -14,7 +14,9 @@ const Layout = ({ children }) => {
     <>
       <div>
         <div className="curtain"></div>
-        <div className="loader"></div>
+        <div className="loader">
+          <div className="preloader_animation"></div>
+        </div>
         <main>{children}</main>
       </div>
     </>

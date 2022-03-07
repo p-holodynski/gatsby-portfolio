@@ -85,6 +85,7 @@ const IndexPage = props => (
       animateAnchor={!1}
       lazyLoading={true}
       afterRender={() => {
+        document.querySelector(".loader").style.display = "none"
         // Wrap every letter in a span
         var textWrapperFirstName = document.querySelector(
           ".ml9 .lettersFirstName"
