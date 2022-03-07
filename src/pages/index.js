@@ -927,10 +927,6 @@ const IndexPage = props => (
                           Tahiti Badminton Federation
                         </a>
                       </h3>
-                      <div className="intro">
-                        {" "}
-                        <a href="https://ftbadminton.pf/">Website</a>{" "}
-                      </div>
                     </div>
                     <div className="card-info">
                       Static Generated Website built for the Tahitian Badminton
@@ -984,15 +980,9 @@ const IndexPage = props => (
                     <div className="title-content">
                       <h3>
                         <a href="https://www.parkwayvolkswagen.co.uk/">
-                          Parkway Volkswagen Website
+                          Parkway Volkswagen
                         </a>
                       </h3>
-                      <div className="intro">
-                        {" "}
-                        <a href="https://www.parkwayvolkswagen.co.uk/">
-                          Website
-                        </a>{" "}
-                      </div>
                     </div>
                     <div className="card-info">
                       Website built for the Parkway Volkswagen Dealerships in
@@ -1046,13 +1036,9 @@ const IndexPage = props => (
                     <div className="title-content">
                       <h3>
                         <a href="https://hrbystolinska.pl/">
-                          HR Freelancer Website
+                          HR Freelancer
                         </a>
                       </h3>
-                      <div className="intro">
-                        {" "}
-                        <a href="https://hrbystolinska.pl/">Website</a>{" "}
-                      </div>
                     </div>
                     <div className="card-info">
                       Website built for the HR Freelancer in Poland. Using
