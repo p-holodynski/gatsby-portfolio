@@ -5,7 +5,7 @@ module.exports = {
     author: `@p_holodynski`,
     siteUrl: `https://p-holodynski.netlify.app`,
     image: "src/static/logo.png",
-    keywords: `freelance, fullstack, developer, portfolio`,
+    keywords: `patryk, holodynski, patrykholodynski, freelance, fullstack, developer, portfolio`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
