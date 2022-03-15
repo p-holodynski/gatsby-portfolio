@@ -35,16 +35,10 @@ module.exports = {
     "gatsby-plugin-netlify",
     "gatsby-plugin-minify-html",
     {
-      resolve: "gatsby-plugin-sitemap",
-      options: {   
-        output: "/",
-      },
-    },
-    {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://patrykholodynski.com',
-        sitemap: 'https://patrykholodynski.com/sitemap-index.xml',
+        sitemap: 'https://patrykholodynski.com/sitemap.xml',
         policy: [{userAgent: '*', allow: '/'}]
       }
     }
