@@ -40,5 +40,13 @@ module.exports = {
         output: "/",
       },
     },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://patrykholodynski.com',
+        sitemap: 'https://patrykholodynski.com/sitemap-0.xml',
+        policy: [{userAgent: '*', allow: '/'}]
+      }
+    }
   ],
 }
