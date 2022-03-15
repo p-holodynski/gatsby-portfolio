@@ -3,7 +3,7 @@ module.exports = {
     title: `Patryk Holodynski Portfolio`,
     description: `Portfolio Website`,
     author: `@p_holodynski`,
-    siteUrl: `https://p-holodynski.netlify.app`,
+    siteUrl: `https://patrykholodynski.com`,
     image: "src/static/logo.png",
     keywords: `patryk, holodynski, patrykholodynski, freelance, fullstack, developer, portfolio`,
   },
@@ -34,5 +34,6 @@ module.exports = {
     // `gatsby-plugin-offline`,
     'gatsby-plugin-netlify',
     'gatsby-plugin-minify-html',
+    'gatsby-plugin-sitemap'
   ],
 }
