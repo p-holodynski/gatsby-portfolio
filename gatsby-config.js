@@ -44,7 +44,7 @@ module.exports = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://patrykholodynski.com',
-        sitemap: 'https://patrykholodynski.com/sitemap-0.xml',
+        sitemap: 'https://patrykholodynski.com/sitemap-index.xml',
         policy: [{userAgent: '*', allow: '/'}]
       }
     }
