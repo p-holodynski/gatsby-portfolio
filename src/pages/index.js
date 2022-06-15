@@ -1070,7 +1070,7 @@ const IndexPage = props => (
             </div>
             <div className="section contact fp-auto-height-responsive">
               <div className="fullpage__slide">
-                <div className="card contact js-moon">
+                <div className="card contact js-moon" style={{height: "90%", maxHeight: "90%"}}>
                   <div className="header contact ml12">
                     <span className="text-wrapper">Contact</span>
                   </div>
@@ -1098,7 +1098,7 @@ const IndexPage = props => (
                       <form
                         name="contact-me-form"
                         method="POST"
-                        action="https://getform.io/f/7e0cc938-3770-4dfa-a9b8-91d4c57dc8ad"
+                        action="https://getform.io/f/f0f408a4-0c49-4c0e-a0aa-26c174cb753f"
                         className="contact-me"
                       >
                         <input
@@ -1115,6 +1115,10 @@ const IndexPage = props => (
                           name="message"
                           placeholder="Your message"
                         ></textarea>
+                        <div
+                          className="g-recaptcha"
+                          data-sitekey={process.env.GATSBY_RECAPTCHA_KEY}
+                        />
                         <button type="submit">Send</button>
                       </form>
                     </div>

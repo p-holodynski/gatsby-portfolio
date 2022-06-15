@@ -8,6 +8,7 @@ module.exports = {
     keywords: `patryk, holodynski, patrykholodynski, freelance, fullstack, developer, portfolio`,
   },
   plugins: [
+    `gatsby-plugin-recaptcha`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
