@@ -1117,7 +1117,7 @@ const IndexPage = props => (
                         ></textarea>
                         <div
                           className="g-recaptcha"
-                          data-sitekey={process.env.GATSBY_RECAPTCHA_KEY}
+                          data-sitekey="6LftInIgAAAAAG9QAxAp2iS8xZAD-JB8bsvT7psA"
                         />
                         <button type="submit">Send</button>
                       </form>
