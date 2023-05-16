@@ -9,6 +9,7 @@ import laravelLogo from "../static/laravel-logo.svg"
 import wordpressLogo from "../static/wordpress-logo.svg"
 import javascriptLogo from "../static/javascript.svg"
 import reactLogo from "../static/react.svg"
+import angularLogo from "../static/angular.svg"
 import vueLogo from "../static/vue.svg"
 import serverlessLogo from "../static/serverless.svg"
 import gatsbyLogo from "../static/gatsby.svg"
@@ -760,6 +761,11 @@ const IndexPage = props => (
               },
               "-=800"
             )
+            let part1 = "p.holodynski";
+            let part2 = Math.pow(2,6);
+            let part4 = "gmail.com";
+            let part5 = part1 + String.fromCharCode(part2) + part4;
+            document.querySelector("#contact-mail").href = "mailto:" + part5;
         }
       }}
       render={({ state, fullpageApi }) => {
@@ -794,9 +800,12 @@ const IndexPage = props => (
                   </p>
                 </div>
                 <Moon />
+                <section id="section-1">
+                  <span id="scroll-btn"></span>
+                </section>
               </div>
             </div>
-            <div className="section skills fp-auto-height-responsive">
+            <div id="section-2" className="section skills fp-auto-height-responsive">
               <div className="fullpage__slide">
                 <div className="card js-moon skills">
                   <div className="header skills ml12">
@@ -832,6 +841,10 @@ const IndexPage = props => (
                           <div className="skill-icon-wrapper">
                             <img src={reactLogo}  width={50} height={50} alt=""/>
                             <span>React</span>
+                          </div>
+                          <div className="skill-icon-wrapper">
+                            <img src={angularLogo}  width={50} height={50} alt=""/>
+                            <span>Angular</span>
                           </div>
                           <div className="skill-icon-wrapper">
                             <img src={vueLogo}  width={50} height={50} alt=""/>
@@ -888,88 +901,25 @@ const IndexPage = props => (
                             <span>Fast Pages</span>
                           </div>
                           <div className="skill-icon-wrapper">
-                            <img src=""  width={0} height={0} alt=""/>
-                            <span></span>
+                            <img src={pageSpeedLogo}  width={50} height={50} alt=""/>
+                            <span>Optimization</span>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <a
-                      className="inspiration"
-                      href="https://icons8.com/icon/pKaVdzbCJGgA/php"
-                    >
-                      PHP icon by Icons8
-                    </a>
                   </div>
                 </div>
               </div>
             </div>
             <div className="section work fp-auto-height-responsive">
-              <div className="slide">
-                <div className="fullpage__slide">
+              <div className="fullpage__slide">
                   <div className="header work ml14">
                     <span className="text-wrapper">
                       <span className="letters">Work</span>
                       <span className="line"></span>
                     </span>
                   </div>
-                  <div className="js-moon blog-card spring-fever tahiti-badminton-federation">
-                    <StaticImage 
-                    src="../static/tahiti-badminton-federation-website.jpg"
-                    alt="tahiti badminton"
-                    placeholder="blurred"
-                    layout="constrained"
-                    height={450}
-                    />
-                    <div className="title-content">
-                      <h3>
-                        <a href="https://ftbadminton.pf/">
-                          Tahiti Badminton Federation
-                        </a>
-                      </h3>
-                    </div>
-                    <div className="card-info">
-                      Static Generated Website built for the Tahitian Badminton
-                      Federation. Project involved using Jamstack framework
-                      Gridsome for serverless hosting and fast content delivery
-                      and Headless CMS - Netflify for a convenient way to update
-                      content of the website.
-                      <a href="https://ftbadminton.pf/">
-                        Visit Website
-                      </a>
-                    </div>
-                    <div className="utility-info">
-                      <ul className="utility-list">
-                        <li>
-                          <span className="licon"></span>
-                          <a href="https://vuejs.org/">Vue</a>
-                        </li>
-                        <li>
-                          <span className="licon"></span>
-                          <a href="https://gridsome.org/">Gridsome</a>
-                        </li>
-                        <li>
-                          <span className="licon"></span>Serverless
-                        </li>
-                        <li>
-                          <span className="licon"></span>Headless CMS
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="gradient-overlay"></div>
-                    <div className="color-overlay"></div>
-                  </div>
-                </div>
-              </div>
-              <div className="slide">
-                <div className="fullpage__slide">
-                  <div className="header work ml14">
-                    <span className="text-wrapper">
-                      <span className="letters">Work</span>
-                      <span className="line"></span>
-                    </span>
-                  </div>
-                  <div className="js-moon blog-card spring-fever parkway-volkswagen">
+                <div className="js-moon blog-card spring-fever parkway-volkswagen">
                   <StaticImage 
                     src="../static/home-parkway-volkswagen.jpg"
                     alt="parkway volkswagen"
@@ -990,19 +940,19 @@ const IndexPage = props => (
                       websites for different dealerships that are linked with
                       internal managements systems, APIs and a custom CMS
                       platform.
-                      <a href="https://www.parkwayvolkswagen.co.uk/">
-                        Visit Website
-                      </a>
                     </div>
                     <div className="utility-info">
+                    <a href="https://www.parkwayvolkswagen.co.uk/">
+                        Visit Website
+                      </a>
                       <ul className="utility-list">
                         <li>
                           <span className="licon"></span>
-                          <a href="https://vuejs.org/">Laravel</a>
+                          Laravel
                         </li>
                         <li>
                           <span className="licon"></span>
-                          <a href="https://gridsome.org/">Redis & MySQL</a>
+                          Redis & MySQL
                         </li>
                         <li>
                           <span className="licon"></span>Vue
@@ -1016,57 +966,6 @@ const IndexPage = props => (
                     <div className="color-overlay"></div>
                   </div>
                 </div>
-              </div>
-              <div className="slide">
-                <div className="fullpage__slide">
-                  <div className="header work ml14">
-                    <span className="text-wrapper">
-                      <span className="letters">Work</span>
-                      <span className="line"></span>
-                    </span>
-                  </div>
-                  <div className="js-moon blog-card spring-fever hrstolinska">
-                  <StaticImage 
-                    src="../static/hrbymartynastolinska.jpg"
-                    alt="parkway volkswagen"
-                    placeholder="blurred"
-                    layout="constrained"
-                    height={450}
-                    />
-                    <div className="title-content">
-                      <h3>
-                        <a href="https://hrbystolinska.pl/">
-                          HR Freelancer
-                        </a>
-                      </h3>
-                    </div>
-                    <div className="card-info">
-                      Website built for the HR Freelancer in Poland. Using
-                      Wordpress and Divi Theme builder to deliver an easy to
-                      maintain personal website.
-                      <a href="https://hrbystolinska.pl/">
-                        Visit Website
-                      </a>
-                    </div>
-                    <div className="utility-info">
-                      <ul className="utility-list">
-                        <li>
-                          <span className="licon"></span>
-                          <a href="https://wordpress.com/">WordPress</a>
-                        </li>
-                        <li>
-                          <span className="licon"></span>
-                          <a href="https://www.elegantthemes.com/">
-                            Divi Theme Builder
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="gradient-overlay"></div>
-                    <div className="color-overlay"></div>
-                  </div>
-                </div>
-              </div>
             </div>
             <div className="section contact fp-auto-height-responsive">
               <div className="fullpage__slide">
@@ -1094,33 +993,21 @@ const IndexPage = props => (
                         width={200}
                         height={200}
                       />
-                      <p>I'm available for work, get in touch</p>
-                      <form
-                        name="contact-me-form"
-                        method="POST"
-                        action="https://getform.io/f/f0f408a4-0c49-4c0e-a0aa-26c174cb753f"
-                        className="contact-me"
-                      >
-                        <input
-                          type="text"
-                          name="name"
-                          placeholder="Your Name"
-                        />
-                        <input
-                          type="email"
-                          name="email"
-                          placeholder="Your Email"
-                        />
-                        <textarea
-                          name="message"
-                          placeholder="Your message"
-                        ></textarea>
-                        <div
-                          className="g-recaptcha"
-                          data-sitekey="6LftInIgAAAAAG9QAxAp2iS8xZAD-JB8bsvT7psA"
-                        />
-                        <button type="submit">Send</button>
-                      </form>
+                      <p>I'm available for work</p>
+                      <a id="contact-mail" href="" style={{
+                          color: "#ffe9ad",
+                          textShadow: "0 10px 15px rgba(2, 11, 22, 0.2)",
+                          fontWeight: "800",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#8f3d4b" className="bi bi-envelope" viewBox="0 0 16 16" style={{
+                          marginRight: "15px",
+                        }}>
+                        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                      </svg> Send me an email
+                      </a>
                     </div>
                   </div>
                 </div>
